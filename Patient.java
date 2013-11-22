@@ -4,8 +4,8 @@
 public class Patient {
 
 	private String name = "N/A";
-	private String phoneNum = -1;
-	private String dob = -1;
+	private String phoneNum = "-1";
+	private String dob = "-1";
 	private String insuranceProvider = "N/A";
 	private Integer policyNum = -1;
 	private String perscriptionHist = "N/A";
@@ -62,7 +62,7 @@ public class Patient {
 			//empty constructor
 	}
 
-	public Patient(String name, String phoneNum, String dob, String insuranceProvider, Integer policyNum, String perscriptionHist) {
+	public Patient(String aName, String aPhoneNum, String aDOB, String aInsuranceProvider, Integer aPolicyNum, String aPerscriptionHist) {
 			this();
 			this.name = aName;
 			this.phoneNum = aPhoneNum;
@@ -75,11 +75,12 @@ public class Patient {
 	public String toString() {
 		String aString = "";
 		aString = "Name: " + this.name + "\n";
-		aString = aString + "Phone Number: " + this.phoneNum + "\n";
-		aString = aString + "Date of Birth: " + this.dob + "\n";
-		aString = aString + "Insurance Provider: " + this.insuranceProvider + "\n";
-		aString = aString + "Policy Number: " + this.policyNum + "\n";
-		aString = aString + "Perscription History: " + this.perscriptionHist + "\n";
+		aString += "Phone Number: " + this.phoneNum + "\n";
+		aString += "Date of Birth: " + this.dob + "\n";
+		aString += "Insurance Provider: " + this.insuranceProvider + "\n";
+		aString += "Policy Number: " + this.policyNum + "\n";
+		aString += "Perscription History: " + this.perscriptionHist + "\n";
+		return aString;
 	}
 
 }

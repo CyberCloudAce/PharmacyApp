@@ -25,16 +25,16 @@ public class Physician extends Prescription{
 
 // Gets
 
-	public void getID(){
+	public int getID(){
 		return this.iD;
 	}
-	public void getFirstName(){
+	public String getFirstName(){
 		return this.firstName;
 	}
-	public void getLastName(){
+	public String getLastName(){
 		return this.lastName;
 	}
-	public void getPhone(){
+	public String getPhone(){
 		return this.phone;
 	}
 
@@ -65,8 +65,9 @@ public class Physician extends Prescription{
 	public String toString(){
 		String aString = "";
 		aString = "ID: " + this.iD + "\n";
-		aString = "FirstName: " + this.firstName + "\n";
-		aString = "LastName: " + this.lastName + "\n";
-		aString = "Phone: " + this.phone + "\n";
+		aString += "FirstName: " + this.firstName + "\n";
+		aString += "LastName: " + this.lastName + "\n";
+		aString += "Phone: " + this.phone + "\n";
+		return aString;
 	}
 }

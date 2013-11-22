@@ -5,9 +5,9 @@
 
 public class Medication {
 
-	private Integer id = "0";
-	private String name = ""
-	private Double cost = "-1"
+	private Integer id = 0;
+	private String name = "";
+	private Double cost = -1.0;
 	private String sideEffects = "";
 
 	public void setID(Integer aID){
@@ -35,7 +35,7 @@ public class Medication {
 	}
 
 	public Double getCost() {
-		return this.getCost;
+		return this.cost;
 	}
 
 	public String getSideEffects() {
@@ -57,9 +57,10 @@ public class Medication {
 	public String toString() {
 		String aString = "";
 		aString = "ID: " + this.id + "\n";
-		aString = aString + "Name: " + this.name + "\n";
-		aString = aString + "Cost: " + this.cost + "\n";
-		aString = aString + "Side Effects: " + this.sideEffects + "\n";
+		aString += "Name: " + this.name + "\n";
+		aString += "Cost: " + this.cost + "\n";
+		aString += "Side Effects: " + this.sideEffects + "\n";
+		return aString;
 	}
 
 }

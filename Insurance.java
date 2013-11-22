@@ -5,7 +5,7 @@
 
 public class Insurance {
 
-	private Integer id = "-1";
+	private Integer id = -1;
 	private String companyName = "";
 	private String policyName = "";
 	private String providerPhoneNum = "";
@@ -61,8 +61,9 @@ public class Insurance {
 	public String toString() {
 		String aString = "";
 		aString = "ID: " + this.id + "\n";
-		aString = aString + "Company Name: " + this.categoryName + "\n";
-		aString = aString + "Policy Name: " + this.policyName + "\n";
-		aString = aString + "Provider Phone Number: " + this.providerPhoneNum + "\n";
+		aString += "Company Name: " + this.companyName + "\n";
+		aString += "Policy Name: " + this.policyName + "\n";
+		aString += "Provider Phone Number: " + this.providerPhoneNum + "\n";
+		return aString;
 	}
 }

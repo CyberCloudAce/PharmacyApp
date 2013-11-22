@@ -11,7 +11,7 @@ public class Prescription {
    	private int    refill = -1;
    	private String dateIssued = "N/A";
    	private String dateExpired = "N/A";
-   	private int    physicianID = "-1"
+   	private int    physicianID = -1;
  
 
  	//SETS
@@ -57,7 +57,7 @@ public class Prescription {
        	return this.dateIssued;
    	}
  
-   	public String getDateExpired()) {
+   	public String getDateExpired() {
       	return this.dateExpired;
    	}
  
@@ -70,7 +70,7 @@ public class Prescription {
    	}
  
  	//Contstructor
-   	public Prescription(int prescriptionID, String medication, int refill, String dateIssued, String dateExpired, int physicianID) {
+   	public Prescription(int aPrescriptionID, String aMedication, int aRefill, String aDateIssued, String aDateExpired, int aPhysicianID) {
        	this();
        	this.prescriptionID = aPrescriptionID;
        	this.medication = aMedication;
@@ -84,11 +84,11 @@ public class Prescription {
    	public  String toString() {
    		String aString = "";
    		aString = "Prescription ID: " + this.prescriptionID + "\n";
-   		aString =  aString + "Medication: " + this.medication + "\n";
-   		aString =  aString + "Refill: " + this.refill + "\n";
-   		aString =  aString + "Date Issued: " + this.dateIssued + "\n";
-   		aString =  aString + "Date Expired: " + this.dateExpired + "\n";
-   		aString =  aString + "physician ID: " + this.physicianID + "\n";
+   		aString += "Medication: " + this.medication + "\n";
+   		aString += "Refill: " + this.refill + "\n";
+   		aString += "Date Issued: " + this.dateIssued + "\n";
+   		aString += "Date Expired: " + this.dateExpired + "\n";
+   		aString += "physician ID: " + this.physicianID + "\n";
    		return aString;
 	}
  
