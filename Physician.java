@@ -63,7 +63,7 @@ public class Physician extends Prescription{
 // Methods
 
 	public String toString(){
-		String aString = ""
+		String aString = "";
 		aString = "ID: " + this.iD + "\n";
 		aString = "FirstName: " + this.firstName + "\n";
 		aString = "LastName: " + this.lastName + "\n";
