@@ -65,6 +65,7 @@ public class addInsuranceMenu {
 	class submitButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			//Insurance aPolicy = new Insurance();
+			
 		}
 	}
 	class exitButtonListener implements ActionListener {

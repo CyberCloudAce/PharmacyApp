@@ -49,10 +49,7 @@ public class MainGUI {
 
 	class addButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			addButton.setBackground(Color.PINK);
-			addMenu view2 = new addMenu();
-			view2.startGUI();
-			frame.setVisible(false);
+			PharmacyApp.aController.addMenuStart(frame);
 		}
 	}
 	class viewButtonListener implements ActionListener {

@@ -4,13 +4,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class addPhysicianMenu {
+public class addPatientMenu {
 
 	//initialize form elements
 	JFrame frame = new JFrame("Main Menu");
@@ -19,15 +20,16 @@ public class addPhysicianMenu {
 	JPanel bottomPanel = new JPanel();
 	
 	//initialize form contents	
-	JLabel infoLabel1 = new JLabel("Add a new Physician");
+	JLabel infoLabel1 = new JLabel("Add a new Patient");
 	JLabel firstNameLabel = new JLabel("First Name");
 	JLabel lastNameLabel = new JLabel("Last Name");
-	JLabel addressLabel = new JLabel("Address");
-	JLabel phoneLabel = new JLabel("Phone Number");
+	JLabel dobLabel = new JLabel("Date of Birth");
+	JLabel insuranceLabel = new JLabel("Insurance");	
 	JTextField firstNameText = new JTextField();
 	JTextField lastNameText = new JTextField();
-	JTextField addressText = new JTextField();
-	JTextField phoneText = new JTextField();
+	JTextField dobText = new JTextField();
+	JComboBox insuranceBox = new JComboBox();
+	JButton perscriptionButton = new JButton("Add Perscription to Patient's history");
 	JButton submitButton = new JButton("Save Changes");
 	JButton exitButton = new JButton("Exit Program");
 
@@ -35,7 +37,7 @@ public class addPhysicianMenu {
 		
 		//Set up form and panels
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(400,260);
+		frame.setSize(400,300);
 		frame.add(topPanel,BorderLayout.NORTH);
 		frame.add(MainPanel,BorderLayout.CENTER);
 		frame.add(bottomPanel,BorderLayout.SOUTH);
@@ -44,26 +46,39 @@ public class addPhysicianMenu {
 		bottomPanel.setBorder(new EmptyBorder(0, 10, 10, 10));
 		frame.setLocationRelativeTo(null);
 		
+		//for (int i = 0; i < Medicines.length(); i++){
+		//      nameBox.addItem(Medicines(i));  
+		//}
+		
 		//Add items to panel. Grid layout means rows, columns, horizontal padding, vertical padding
 		topPanel.setLayout(new GridLayout(1,1,0,0));
-	    MainPanel.setLayout(new GridLayout(4,2,10,10));
+	    MainPanel.setLayout(new GridLayout(5,2,10,10));
 	    bottomPanel.setLayout(new GridLayout(1,2,10,10));
 	    topPanel.add(infoLabel1);
 		MainPanel.add(firstNameLabel);
 		MainPanel.add(firstNameText);
 		MainPanel.add(lastNameLabel);
 		MainPanel.add(lastNameText);
-		MainPanel.add(addressLabel);
-		MainPanel.add(addressText);
-		MainPanel.add(phoneLabel);
-		MainPanel.add(phoneText);
+		MainPanel.add(dobLabel);
+		MainPanel.add(dobText);
+		MainPanel.add(insuranceLabel);
+		MainPanel.add(insuranceBox);
+		MainPanel.add(perscriptionButton);
 		bottomPanel.add(submitButton);
 		bottomPanel.add(exitButton);
 		
+		perscriptionButton.addActionListener(new perscriptionButtonListener());
 		submitButton.addActionListener(new submitButtonListener());
 	    exitButton.addActionListener(new exitButtonListener());
 	    
 		frame.setVisible(true);
+	}
+	class perscriptionButtonListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			addPerscriptionMenu view4 = new addPerscriptionMenu();
+			view4.startGui();
+			frame.setVisible(false);
+		}
 	}
 	class submitButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {

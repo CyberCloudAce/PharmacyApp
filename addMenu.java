@@ -15,7 +15,7 @@ public class addMenu {
 	JButton patientButton = new JButton("Add New Patient");
 	JButton physicianButton = new JButton("Add New Physician");
 	JButton medicineButton = new JButton("Add New Medicine");
-	JButton perscriptionButton = new JButton("Add New Perscription");
+	//JButton perscriptionButton = new JButton("Add New Perscription");
 	JButton insuranceButton = new JButton("Add New Insurance");
 	JButton exitButton = new JButton("Exit Program");
 
@@ -42,7 +42,7 @@ public class addMenu {
 	    MainPanel.add(patientButton);
 	    MainPanel.add(physicianButton);
 	    MainPanel.add(medicineButton);
-	    MainPanel.add(perscriptionButton);
+	    //MainPanel.add(perscriptionButton);
 	    MainPanel.add(insuranceButton);
 	    MainPanel.add(exitButton);
 	    
@@ -50,7 +50,7 @@ public class addMenu {
 	    patientButton.addActionListener(new patientButtonListener());
 	    physicianButton.addActionListener(new physicianButtonListener());
 	    medicineButton.addActionListener(new medicineButtonListener());
-	    perscriptionButton.addActionListener(new perscriptionButtonListener());
+	   // perscriptionButton.addActionListener(new perscriptionButtonListener());
 	    insuranceButton.addActionListener(new insuranceButtonListener());
 	    exitButton.addActionListener(new exitButtonListener());
 	  
@@ -59,7 +59,9 @@ public class addMenu {
 	}
 	class patientButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			patientButton.setBackground(Color.PINK);
+			addPatientMenu view3 = new addPatientMenu();
+			view3.startGui();
+			frame.setVisible(false);
 		}
 	}
 	class physicianButtonListener implements ActionListener {
@@ -71,14 +73,18 @@ public class addMenu {
 	}
 	class medicineButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			medicineButton.setBackground(Color.PINK);
+			addMedicineMenu view3 = new addMedicineMenu();
+			view3.startGui();
+			frame.setVisible(false);
 		}
 	}
-	class perscriptionButtonListener implements ActionListener {
+	/*class perscriptionButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			perscriptionButton.setBackground(Color.PINK);
+			addPerscriptionMenu view3 = new addPerscriptionMenu();
+			view3.startGui();
+			frame.setVisible(false);
 		}
-	}
+	}*/
 	class insuranceButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			addInsuranceMenu view3 = new addInsuranceMenu();
