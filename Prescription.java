@@ -19,11 +19,11 @@ public class Prescription {
      	this.prescriptionID = aPrescriptionID;
    	}
  
-   	public void setMedication(Double aMedication){
+   	public void setMedication(String aMedication){
      	this.medication = aMedication;
    	}
  
-   	public void setRefill(Double aRefill){
+   	public void setRefill(int aRefill){
      	this.refill = aRefill;
    	}
  
@@ -31,11 +31,11 @@ public class Prescription {
      	this.dateIssued = aDateIssued;
    	}
  
-   	public void setDateExpired(Double aDateExpired){
+   	public void setDateExpired(String aDateExpired){
      	this.dateExpired = aDateExpired;
    	}
  
-   	public void setPhysicianID(String aPhysicianID){
+   	public void setPhysicianID(int aPhysicianID){
      	this.physicianID = aPhysicianID;
    	}
  
