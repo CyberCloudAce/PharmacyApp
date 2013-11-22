@@ -60,5 +60,9 @@ public class Insurance {
 
 	public String toString() {
 		String aString = "";
+		aString = "ID: " + this.id + "\n";
+		aString = aString + "Company Name: " + this.categoryName + "\n";
+		aString = aString + "Policy Name: " + this.policyName + "\n";
+		aString = aString + "Provider Phone Number: " + this.providerPhoneNum + "\n";
 	}
 }
