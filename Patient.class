@@ -43,19 +43,19 @@ public class Patient {
 	}
 
 	public Double getDOB() {
-			return this.name;
+			return this.dob;
 	}
 
 	public String getInsuranceProvider() {
-			return this.name;
+			return this.insuranceProvider;
 	}
 
 	public Double getPolicyNum() {
-			return this.name;
+			return this.policyNum;
 	}
 
 	public String getPerscriptionHist() {
-			return this.name;
+			return this.perscriptionHist;
 	}
 
 	public Patient() {
