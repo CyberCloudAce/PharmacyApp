@@ -1,0 +1,75 @@
+// Patient Class
+// Containes patient information such as: Name, Number, DOB, Insurance Provider, policy num, and perscription history
+
+public class Patient {
+
+	private String name = "N/A";
+	private Double phoneNum = -1;
+	private Double dob = -1;
+	private String insuranceProvider = "N/A";
+	private Double policyNum = -1;
+	private String perscriptionHist = "N/A";
+
+	public void setName(String aName){
+		this.name = aName;
+	}
+
+	public void setPhoneNum(Double aPhoneNum){
+		this.phoneNum = aPhoneNum;
+	}
+
+	public void setDOB(Double aDOB){
+		this.dob = aDOB;
+	}
+
+	public void setInsuranceProvider(String aInsuranceProvider){
+		this.insuranceProvider = aInsuranceProvider;
+	}
+
+	public void setPolicyNum(Double aPolicyNum){
+		this.policyNum = aPolicyNum;
+	}
+
+	public void setPerscriptionHist(String aPerscriptionHist){
+		this.perscriptionHist = aPerscriptionHist;
+	}
+
+	public String getName() {
+			return this.name;
+	}
+
+	public Double getPhoneNum() {
+			return this.phoneNum;
+	}
+
+	public Double getDOB() {
+			return this.name;
+	}
+
+	public String getInsuranceProvider() {
+			return this.name;
+	}
+
+	public Double getPolicyNum() {
+			return this.name;
+	}
+
+	public String getPerscriptionHist() {
+			return this.name;
+	}
+
+	public Patient() {
+			//empty constructor
+	}
+
+	public Patient(String name, Double phoneNum, Double dob, String insuranceProvider, Double policyNum, String perscriptionHist) {
+			this();
+			this.name = aName;
+			this.phoneNum = aPhoneNum;
+			this.dob = aDOB;
+			this.insuranceProvider = aInsuranceProvider;
+			this.policyNum = aPolicyNum;
+			this.perscriptionHist = aPerscriptionHist;
+	}
+
+}
