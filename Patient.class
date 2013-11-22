@@ -72,5 +72,14 @@ public class Patient {
 			this.perscriptionHist = aPerscriptionHist;
 	}
 	
+	public String toString() {
+		String aString = "";
+		aString = "Name: " + this.name + "\n";
+		aString = aString + "Phone Number: " + this.phoneNum + "\n";
+		aString = aString + "Date of Birth: " + this.dob + "\n";
+		aString = aString + "Insurance Provider: " + this.insuranceProvider + "\n";
+		aString = aString + "Policy Number: " + this.policyNum + "\n";
+		aString = aString + "Perscription History: " + this.perscriptionHist + "\n";
+	}
 
 }
