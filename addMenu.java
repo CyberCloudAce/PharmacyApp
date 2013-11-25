@@ -59,42 +59,29 @@ public class addMenu {
 	}
 	class patientButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			addPatientMenu view3 = new addPatientMenu();
-			view3.startGui();
-			frame.setVisible(false);
+			PharmacyApp.aController.addPatientMenuStart(frame);
 		}
 	}
 	class physicianButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			addPhysicianMenu view3 = new addPhysicianMenu();
-			view3.startGui();
-			frame.setVisible(false);
+			PharmacyApp.aController.addMenuStart(frame);
 		}
 	}
 	class medicineButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			addMedicineMenu view3 = new addMedicineMenu();
-			view3.startGui();
-			frame.setVisible(false);
+			PharmacyApp.aController.addMedicineMenuStart(frame);
+
 		}
 	}
-	/*class perscriptionButtonListener implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
-			addPerscriptionMenu view3 = new addPerscriptionMenu();
-			view3.startGui();
-			frame.setVisible(false);
-		}
-	}*/
 	class insuranceButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			addInsuranceMenu view3 = new addInsuranceMenu();
-			view3.startGui();
-			frame.setVisible(false);
+			PharmacyApp.aController.addInsuranceMenuStart(frame);
 		}
 	}
 	class exitButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			System.exit(0);
+			PharmacyApp.aController.shutdown();
+
 		}
 	}
 }

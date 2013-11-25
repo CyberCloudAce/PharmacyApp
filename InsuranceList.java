@@ -1,79 +1,47 @@
 // Author: Mitchell Skinner
 // Date: 11/22/2013
 // InsuranceList
-
+//
+// Updated 11/23 by Jeff Andolora because goddamn so many compiler errors everywhere. also replaced while loop with for-each for readability
 import java.util.*;
 
 public class InsuranceList{
 
-	private ArrayList<Insurance> list = new ArrayList<InsuranceList>();
+	private List<Insurance> aList = new ArrayList<Insurance>();
 
 	// Methods
 
 	private void add(int aID, String aName, String aPolicy, String aPhone){
-		
-		this.remove(aID);
-		insurance.add(new Insurance(aID, aName, aPolicy, aPhone));
+		aList.remove(aID);
+		aList.add(new Insurance(aID, aName, aPolicy, aPhone));
 	}
 
-	private void remove(String aID){
-
-		int i = insurance.size() -1;
-		while(i >= 0){
-			if(insurance.get(i).getID() == aID){
-				insurance.remove(i);
+	private void remove(int aID){
+		for(Insurance aPolicy:aList){
+			if(aPolicy.getID() == aID){
+				aList.remove(aPolicy);
+				break;
 			}
-
-			i--;
 		}
 	}
-
-	public boolean contains(String aID){
-
-		boolean isContained = false;
-
-		for(brokenRule aRule: insurance){
-			if(aRule.getID() == aID){
-				isContained = true;
+	public boolean contains(int aID){
+		for(Insurance aPolicy:aList){
+			if(aPolicy.getID() == aID){
+				return true;
 			}
 		}
-
-		return isContained;
-
+		return false;
 	}
 
 	public int size(){
-
-		return insurance.size();
-
+		return aList.size();
 	}
-
-	public boolean isValid(){
-
-		if(this.size() == 0){
-
-			return true;
-		}else{
-			return false;
-		}
-	}
-
-	public void checkRule(int aID, String aName, String aPolicy, String aPhone boolean isBroken){
-		if(isBroken == true){
-			this.add(aID, aName, aPolicy, aPhone);
-		}else{
-			this.remove(aID);
-		}
-	}
-
+	
 	public String toString(){
-
 		String aString = "";
-
-		for(insurance aRule b: insurance){
-			aString = aString + b.toString();
+		for(Insurance aPolicy:aList){
+			aString += aPolicy.toString() + "\n";
 		}
-
 		return aString;
 	}
 }
