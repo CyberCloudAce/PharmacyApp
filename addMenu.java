@@ -64,7 +64,7 @@ public class addMenu {
 	}
 	class physicianButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			PharmacyApp.aController.addMenuStart(frame);
+			PharmacyApp.aController.addPhysicianMenuStart(frame);
 		}
 	}
 	class medicineButtonListener implements ActionListener {
