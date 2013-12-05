@@ -1,15 +1,18 @@
 // Patient Class
-// Containes patient information such as: Name, Number, DOB, Insurance Provider, policy num, and perscription history
-
+// Contains patient information such as: Name, Number, DOB, Insurance Provider, policy num, and perscription history
+//updated 12/5 by jeff to add ID and remove policyNum
 public class Patient {
 
+	private int id = -1;
 	private String name = "N/A";
 	private String phoneNum = "-1";
 	private String dob = "-1";
 	private String insuranceProvider = "N/A";
-	private Integer policyNum = -1;
-	private String perscriptionHist = "N/A";
+	public PerscriptionList perscriptionHist;
 
+	public void setId(int aID){
+		this.id = aID;
+	}
 	public void setName(String aName){
 		this.name = aName;
 	}
@@ -26,14 +29,10 @@ public class Patient {
 		this.insuranceProvider = aInsuranceProvider;
 	}
 
-	public void setPolicyNum(Integer aPolicyNum){
-		this.policyNum = aPolicyNum;
+	public int getID(){
+		return this.id;
 	}
-
-	public void setPerscriptionHist(String aPerscriptionHist){
-		this.perscriptionHist = aPerscriptionHist;
-	}
-
+	
 	public String getName() {
 			return this.name;
 	}
@@ -50,25 +49,17 @@ public class Patient {
 			return this.insuranceProvider;
 	}
 
-	public Integer getPolicyNum() {
-			return this.policyNum;
-	}
-
-	public String getPerscriptionHist() {
-			return this.perscriptionHist;
-	}
-
 	public Patient() {
 			//empty constructor
 	}
 
-	public Patient(String aName, String aPhoneNum, String aDOB, String aInsuranceProvider, Integer aPolicyNum, String aPerscriptionHist) {
+	public Patient(int aID, String aName, String aPhoneNum, String aDOB, String aInsuranceProvider, PerscriptionList aPerscriptionHist) {
 			this();
+			this.id = aID;
 			this.name = aName;
 			this.phoneNum = aPhoneNum;
 			this.dob = aDOB;
 			this.insuranceProvider = aInsuranceProvider;
-			this.policyNum = aPolicyNum;
 			this.perscriptionHist = aPerscriptionHist;
 	}
 	
@@ -78,8 +69,7 @@ public class Patient {
 		aString += "Phone Number: " + this.phoneNum + "\n";
 		aString += "Date of Birth: " + this.dob + "\n";
 		aString += "Insurance Provider: " + this.insuranceProvider + "\n";
-		aString += "Policy Number: " + this.policyNum + "\n";
-		aString += "Perscription History: " + this.perscriptionHist + "\n";
+		aString += "Perscription History: " + this.perscriptionHist.toString() + "\n";
 		return aString;
 	}
 

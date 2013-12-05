@@ -5,7 +5,7 @@
 
 public class Medication {
 
-	private Integer id = 0;
+	private int id = 0;
 	private String name = "";
 	private Double cost = -1.0;
 	private String sideEffects = "";

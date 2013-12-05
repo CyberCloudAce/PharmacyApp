@@ -20,13 +20,14 @@ public class Controller {
 	}
 
 	
+	
+	
 	//Menu start methods
 	
 	public void mainMenuStart(JFrame frame){ 
 		MainGUI view = new MainGUI();
 		view.startGUI();
 	}
-	
 	//called from MainGUI
 	public void addMenuStart(JFrame frame){
 		frame.setVisible(false);
@@ -72,5 +73,17 @@ public class Controller {
 		addPerscriptionMenu view2 = new addPerscriptionMenu();
 		view2.startGui();
 	}
+	
+	//Add methods - called from add Forms
+	public void addPatient(String firstName, String lastName, String dob, String Insurance, PerscriptionList perscriptions){
+		
+		//Do stuff
+		
+	}
+	
+	
+	
+	
+	
 	
 }
