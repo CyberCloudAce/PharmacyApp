@@ -40,7 +40,7 @@ public class Controller {
 	}
 	public void viewMenuStart(JFrame frame){
 		frame.setVisible(false);
-		//updateMenu view2 = new updateMenu();
+		//viewMenu view2 = new viewMenu();
 		//view2.startGUI();
 	}
 	
