@@ -13,12 +13,17 @@ public class Controller {
 	
 	-Jeff, 11/24
 	
+	ps we may want to split this up into a GUIController, DataController, etc.
 	*/
 	
 	public void shutdown(){
 		System.exit(0);
 	}
-
+	public void initDB(){
+		DataAccessClass aDataAccess = new DataAccessClass();
+		aDataAccess.getDB();
+		aDataAccess.getPatient();
+	}
 	
 	
 	

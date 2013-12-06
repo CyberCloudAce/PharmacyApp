@@ -1,6 +1,6 @@
 import java.net.UnknownHostException;
-
 import com.mongodb.*;
+
 public class PharmacyApp {
 	
 	public static Controller aController = new Controller();
@@ -9,14 +9,11 @@ public class PharmacyApp {
 	public PatientList aPatientList = new PatientList();
 	public MedicationList aMedicineList = new MedicationList();
 	public PhysicianList aPhysicianList = new PhysicianList();
+	public DataAccessClass aDataAccess = new DataAccessClass();
 
 	//To do: Probably start commenting shit
 	public static void main(String[] args) {
 		view.startGUI();
-		try { //Must use try catch with DB connection - Mongo class throws UnknownHostException
-			Mongo aMongo = new Mongo("localhost");
-		} catch (UnknownHostException e) {
-			System.out.println("welp");
-		}
+		aController.initDB();
 	}
 }

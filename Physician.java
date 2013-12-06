@@ -2,7 +2,7 @@
 // Date: 11/22/2013
 // Physician
 
-public class Physician extends Prescription{
+public class Physician{
 	private int iD = -1;
 	private String firstName = "NA";
 	private String lastName = "NA";
