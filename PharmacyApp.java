@@ -9,11 +9,9 @@ public class PharmacyApp {
 	public PatientList aPatientList = new PatientList();
 	public MedicationList aMedicineList = new MedicationList();
 	public PhysicianList aPhysicianList = new PhysicianList();
-	public DataAccessClass aDataAccess = new DataAccessClass();
 
 	//To do: Probably start commenting shit
 	public static void main(String[] args) {
 		view.startGUI();
-		aController.initDB();
 	}
 }

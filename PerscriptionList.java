@@ -7,13 +7,22 @@ public class PerscriptionList {
 	private List<Prescription> aList = new ArrayList<Prescription>();
 
 	// Methods
-
-	private void add(int aID, String aMedication, int aRefill, String aIssueDate, String aExpiryDate, int aPhysicianId){
+	
+	public List<Prescription> getList(){
+		return aList;
+	}
+	
+	public void add(int aID, String aMedication, int aRefill, String aIssueDate, String aExpiryDate, int aPhysicianId){
 		aList.remove(aID);
 		aList.add(new Prescription(aID,aMedication,aRefill,aIssueDate,aExpiryDate,aPhysicianId));
 	}
+	
+	public void add(Prescription aPerscription){
+		aList.remove(aPerscription.getPrescriptionID());
+		aList.add(aPerscription);
+	}
 
-	private void remove(int aID){
+	public void remove(int aID){
 		for(Prescription aPerscription:aList){
 			if(aPerscription.getPrescriptionID() == aID){
 				aList.remove(aPerscription);

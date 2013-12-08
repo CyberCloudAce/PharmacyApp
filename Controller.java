@@ -2,6 +2,8 @@ import javax.swing.JFrame;
 	//coded by Jeff Andolora, 11/20ish
 public class Controller {
 	
+	public DataAccessClass aDataAccess = new DataAccessClass();
+
 	/*
 	A bit of an update on how i'm doing this:
 	
@@ -19,13 +21,6 @@ public class Controller {
 	public void shutdown(){
 		System.exit(0);
 	}
-	public void initDB(){
-		DataAccessClass aDataAccess = new DataAccessClass();
-		aDataAccess.getDB();
-		aDataAccess.getPatient();
-	}
-	
-	
 	
 	//Menu start methods
 	
@@ -59,7 +54,11 @@ public class Controller {
 	public void addPhysicianMenuStart(JFrame frame){
 		frame.setVisible(false);
 		addPhysicianMenu view2 = new addPhysicianMenu();
-		view2.startGui();
+		view2.startGui(frame);
+		
+	}
+	public void closeAddPhysicianMenu(JFrame frame){
+		frame.setVisible(true);
 	}
 	public void addInsuranceMenuStart(JFrame frame){
 		frame.setVisible(false);
@@ -80,11 +79,13 @@ public class Controller {
 	}
 	
 	//Add methods - called from add Forms
-	public void addPatient(String firstName, String lastName, String dob, String Insurance, PerscriptionList perscriptions){
-		
+	public void addPatient(String firstName, String lastName, String phone, String dob, String insurance, PerscriptionList perscriptions){
+		int randomID = (int) Math.floor(Math.random() * 5000);
+		String name = firstName + " " + lastName;
+		aDataAccess.addPatient(randomID, name, phone, dob, insurance, perscriptions);
 		//Do stuff
-		
 	}
+	//public void 
 	
 	
 	

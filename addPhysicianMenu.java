@@ -30,8 +30,11 @@ public class addPhysicianMenu {
 	JTextField phoneText = new JTextField();
 	JButton submitButton = new JButton("Save Changes");
 	JButton exitButton = new JButton("Exit Program");
+	public JFrame bFrame = new JFrame();
 
-	public void startGui(){
+	public void startGui(JFrame aFrame){
+		bFrame = aFrame;
+		
 		
 		//Set up form and panels
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -68,6 +71,8 @@ public class addPhysicianMenu {
 	class submitButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			//Physician aDoctor = new Physician;
+			bFrame.setVisible(true);
+			frame.setVisible(false);
 		}
 	}
 	class exitButtonListener implements ActionListener {

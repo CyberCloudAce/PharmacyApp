@@ -28,7 +28,13 @@ public class Patient {
 	public void setInsuranceProvider(String aInsuranceProvider){
 		this.insuranceProvider = aInsuranceProvider;
 	}
-
+	
+	public void setPerscriptionList(PerscriptionList aList){
+		this.perscriptionHist = aList;
+	}
+	
+	
+	
 	public int getID(){
 		return this.id;
 	}
