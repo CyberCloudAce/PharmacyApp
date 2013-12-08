@@ -2,7 +2,7 @@ import javax.swing.JFrame;
 	//coded by Jeff Andolora, 11/20ish
 public class Controller {
 	
-	public DataAccessClass aDataAccess = new DataAccessClass();
+	public static DataAccessClass aDataAccess = new DataAccessClass();
 
 	/*
 	A bit of an update on how i'm doing this:
@@ -79,17 +79,19 @@ public class Controller {
 	}
 	
 	//Add methods - called from add Forms
-	public void addPatient(String firstName, String lastName, String phone, String dob, String insurance, PerscriptionList perscriptions){
-		int randomID = (int) Math.floor(Math.random() * 5000);
+	public static void addPatient(String firstName, String lastName, String phone, String dob, String insurance){
+		int randomID = (int) Math.floor(Math.random() * 500000);
 		String name = firstName + " " + lastName;
-		aDataAccess.addPatient(randomID, name, phone, dob, insurance, perscriptions);
+		aDataAccess.addPatient(randomID, name, phone, dob, insurance);
 		//Do stuff
 	}
-	//public void 
+	
+	public static void addPerscription(String patientName, String medication, String refill, String dateIssued, String dateExpired, String physician){
+		
+
 	
 	
-	
-	
+	}
 	
 	
 }

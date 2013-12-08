@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class ViewMedicationMenu {
+public class viewMedicationMenu {
 
 	//initialize form elements
     JFrame frame = new JFrame("Main Menu");

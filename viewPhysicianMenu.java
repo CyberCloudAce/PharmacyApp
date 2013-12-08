@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class ViewInsuranceMenu {
+public class viewPhysicianMenu {
 
 	//initialize form elements
     JFrame frame = new JFrame("Main Menu");
@@ -19,17 +19,17 @@ public class ViewInsuranceMenu {
     JPanel bottomPanel = new JPanel();
 
     //initialize form contents
-    JLabel infoLabel1 = new JLabel("Current Insurance Policies:");
-    JLabel infoProviderLabel = new JLabel("Provider Name:");
-    JLabel infoPolicyLabel = new JLabel("Policy Name:");
-    JLabel infoDescriptionLabel = new JLabel("Description:");
-    JLabel providerLabel = new JLabel("");
-    JLabel policyLabel = new JLabel("");
-    JLabel descriptionLabel = new JLabel("");
+    JLabel infoLabel1 = new JLabel("Current Physician:");
+    JLabel infoFirstNameLabel = new JLabel("First Name:");
+    JLabel infoLastNameLabel = new JLabel("Last Name:");
+    JLabel infoPhoneLabel = new JLabel("Phone Number");
+    JLabel firstNameLabel = new JLabel("");
+    JLabel lastNameLabel = new JLabel("");
+    JLabel phoneLabel = new JLabel("");
     JButton returnButton = new JButton("Return");
     JButton exitButton = new JButton("Exit Program");
 
-    public void startGui(String provider, String policy, String description){
+    public void startGui(String firstName, String lastName, String phoneNum){
 
     	//Set up form and panels
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -42,24 +42,23 @@ public class ViewInsuranceMenu {
         bottomPanel.setBorder(new EmptyBorder(0, 10, 10, 10));
 
         frame.setLocationRelativeTo(null);
-        providerLabel.setText(provider);
-        policyLabel.setText(policy);
-        descriptionLabel.setText(description);
+        firstNameLabel.setText(firstName);
+        lastNameLabel.setText(lastName);
+        phoneLabel.setText(phoneNum);
                 
         //Add items to panel. Grid layout means rows, columns, horizontal padding, vertical padding
         topPanel.setLayout(new GridLayout(1,1,0,0));
         mainPanel.setLayout(new GridLayout(3,2,10,10));
         bottomPanel.setLayout(new GridLayout(1,2,10,10));
         topPanel.add(infoLabel1);
-        mainPanel.add(infoProviderLabel);
-        mainPanel.add(providerLabel);
-        mainPanel.add(infoPolicyLabel);
-        mainPanel.add(policyLabel);
-        mainPanel.add(infoDescriptionLabel);
-        mainPanel.add(descriptionLabel);
+        mainPanel.add(infoFirstNameLabel);
+        mainPanel.add(firstNameLabel);
+        mainPanel.add(infoLastNameLabel);
+        mainPanel.add(lastNameLabel);
+        mainPanel.add(infoPhoneLabel);
+        mainPanel.add(phoneLabel);
         bottomPanel.add(returnButton);
-        bottomPanel.add(exitButton);
-                
+        bottomPanel.add(exitButton);        
         returnButton.addActionListener(new returnButtonListener());
         exitButton.addActionListener(new exitButtonListener());
             

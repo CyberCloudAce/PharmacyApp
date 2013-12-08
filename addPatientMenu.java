@@ -26,9 +26,11 @@ public class addPatientMenu {
 	JLabel dobLabel = new JLabel("Date of Birth");
 	JLabel insuranceLabel = new JLabel("Insurance");	
 	JTextField firstNameText = new JTextField();
+	JLabel phoneLabel = new JLabel("Phone");	
+	JTextField phoneText = new JTextField();
 	JTextField lastNameText = new JTextField();
 	JTextField dobText = new JTextField();
-	JComboBox insuranceBox = new JComboBox();
+	JTextField insuranceBox = new JTextField();
 	JButton perscriptionButton = new JButton("Add Perscription to Patient's history");
 	JButton submitButton = new JButton("Save Changes");
 	JButton exitButton = new JButton("Exit Program");
@@ -46,13 +48,10 @@ public class addPatientMenu {
 		bottomPanel.setBorder(new EmptyBorder(0, 10, 10, 10));
 		frame.setLocationRelativeTo(null);
 		
-		//for (int i = 0; i < Medicines.length(); i++){
-		//      nameBox.addItem(Medicines(i));  
-		//}
 		
 		//Add items to panel. Grid layout means rows, columns, horizontal padding, vertical padding
 		topPanel.setLayout(new GridLayout(1,1,0,0));
-	    MainPanel.setLayout(new GridLayout(5,2,10,10));
+	    MainPanel.setLayout(new GridLayout(6,2,10,10));
 	    bottomPanel.setLayout(new GridLayout(1,2,10,10));
 	    topPanel.add(infoLabel1);
 		MainPanel.add(firstNameLabel);
@@ -61,6 +60,8 @@ public class addPatientMenu {
 		MainPanel.add(lastNameText);
 		MainPanel.add(dobLabel);
 		MainPanel.add(dobText);
+		MainPanel.add(phoneLabel);
+		MainPanel.add(phoneText);
 		MainPanel.add(insuranceLabel);
 		MainPanel.add(insuranceBox);
 		MainPanel.add(perscriptionButton);
@@ -82,7 +83,12 @@ public class addPatientMenu {
 	}
 	class submitButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			//Physician aDoctor = new Physician;
+			Controller.addPatient(firstNameText.getText(),
+									lastNameText.getText(),
+									phoneText.getText(),
+									dobText.getText(),
+									insuranceBox.getText());
+					
 		}
 	}
 	class exitButtonListener implements ActionListener {

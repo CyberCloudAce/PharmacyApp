@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class ViewPerscriptionMenu {
+public class viewInsuranceMenu {
 
 	//initialize form elements
     JFrame frame = new JFrame("Main Menu");
@@ -19,21 +19,17 @@ public class ViewPerscriptionMenu {
     JPanel bottomPanel = new JPanel();
 
     //initialize form contents
-    JLabel infoLabel1 = new JLabel("Current Perscriptions:");
-    JLabel infoMedicineLabel = new JLabel("Medicine Name:");
-    JLabel infoRefillLabel = new JLabel("Number of Refills:");
-    JLabel infoStDateLabel = new JLabel("Start Date:");
-    JLabel infoEndDateLabel = new JLabel("End Date:");
-	JLabel infoPhysicianLabel = new JLabel("Physician:");
-    JLabel medicineLabel = new JLabel("");
-    JLabel refillLabel = new JLabel("");
-    JLabel stDateLabel = new JLabel("");
-    JLabel endDateLabel = new JLabel("");
-    JLabel physicianLabel = new JLabel("");
+    JLabel infoLabel1 = new JLabel("Current Insurance Policies:");
+    JLabel infoProviderLabel = new JLabel("Provider Name:");
+    JLabel infoPolicyLabel = new JLabel("Policy Name:");
+    JLabel infoDescriptionLabel = new JLabel("Description:");
+    JLabel providerLabel = new JLabel("");
+    JLabel policyLabel = new JLabel("");
+    JLabel descriptionLabel = new JLabel("");
     JButton returnButton = new JButton("Return");
     JButton exitButton = new JButton("Exit Program");
 
-    public void startGui(String medication, String refill, String startDate, String endDate, String physician){
+    public void startGui(String provider, String policy, String description){
 
     	//Set up form and panels
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -46,29 +42,24 @@ public class ViewPerscriptionMenu {
         bottomPanel.setBorder(new EmptyBorder(0, 10, 10, 10));
 
         frame.setLocationRelativeTo(null);
-        medicineLabel.setText(medication);
-        refillLabel.setText(refill);
-        stDateLabel.setText(startDate);
-        endDateLabel.setText(endDate);
-        physicianLabel.setText(physician);
+        providerLabel.setText(provider);
+        policyLabel.setText(policy);
+        descriptionLabel.setText(description);
                 
         //Add items to panel. Grid layout means rows, columns, horizontal padding, vertical padding
         topPanel.setLayout(new GridLayout(1,1,0,0));
         mainPanel.setLayout(new GridLayout(3,2,10,10));
         bottomPanel.setLayout(new GridLayout(1,2,10,10));
         topPanel.add(infoLabel1);
-        mainPanel.add(infoMedicineLabel);
-        mainPanel.add(medicineLabel);
-        mainPanel.add(infoRefillLabel);
-        mainPanel.add(refillLabel);
-        mainPanel.add(infoStDateLabel);
-        mainPanel.add(stDateLabel);
-        mainPanel.add(infoEndDateLabel);
-        mainPanel.add(endDateLabel);
-        mainPanel.add(infoPhysicianLabel);
-        mainPanel.add(physicianLabel);
+        mainPanel.add(infoProviderLabel);
+        mainPanel.add(providerLabel);
+        mainPanel.add(infoPolicyLabel);
+        mainPanel.add(policyLabel);
+        mainPanel.add(infoDescriptionLabel);
+        mainPanel.add(descriptionLabel);
         bottomPanel.add(returnButton);
-        bottomPanel.add(exitButton);        
+        bottomPanel.add(exitButton);
+                
         returnButton.addActionListener(new returnButtonListener());
         exitButton.addActionListener(new exitButtonListener());
             

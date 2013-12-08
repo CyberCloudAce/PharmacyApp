@@ -13,7 +13,7 @@ public class DataAccessClass {
 	 * May be migrated to a server in SET 446 soon
 	 * Or on an ESXI server
 	 */
-	public void addPatient(int aID, String aName, String aPhone, String aDOB, String aInsurance, PerscriptionList aList){
+	public void addPatient(int aID, String aName, String aPhone, String aDOB, String aInsurance){
 		try { //Must use try catch with DB connection - Mongo class throws UnknownHostException
 			Mongo aMongo = new Mongo("136.224.251.233"); //.91.185 on wifi .251.233 in peet
 			DB db = aMongo.getDB("database"); //not sure what this does but apparently it's necessary
@@ -29,7 +29,6 @@ public class DataAccessClass {
 			//you should probably try to start the server if this code runs
 			System.out.println("have you tried turning it on and off again?");
 		}
-		addPerscriptionHistory(aList, aName); //calls function to add associated perscription history
 	}
 	public void addPerscriptionHistory(PerscriptionList aHistory, String aName){
 		try { //Must use try catch with DB connection - Mongo class throws UnknownHostException
