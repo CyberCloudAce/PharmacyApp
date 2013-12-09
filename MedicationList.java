@@ -34,6 +34,7 @@ public class MedicationList {
 		return aList.size();
 	}
 	
+	@Override
 	public String toString(){
 		String aString = "";
 		for(Medication aMedication:aList){

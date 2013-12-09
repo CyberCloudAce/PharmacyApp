@@ -74,11 +74,13 @@ public class addMedicineMenu {
 		frame.setVisible(true);
 	}
 	class submitButtonListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			//Physician aDoctor = new Physician;
 		}
 	}
 	class exitButtonListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.exit(0);
 		}

@@ -62,6 +62,7 @@ public class Physician{
 
 // Methods
 
+	@Override
 	public String toString(){
 		String aString = "";
 		aString = "ID: " + this.iD + "\n";

@@ -43,6 +43,7 @@ public class PerscriptionList {
 		return aList.size();
 	}
 	
+	@Override
 	public String toString(){
 		String aString = "";
 		for(Prescription aPerscription:aList){

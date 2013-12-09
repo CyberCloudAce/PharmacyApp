@@ -63,12 +63,14 @@ public class addInsuranceMenu {
 		frame.setVisible(true);
 	}
 	class submitButtonListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			//Insurance aPolicy = new Insurance();
 			
 		}
 	}
 	class exitButtonListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.exit(0);
 		}

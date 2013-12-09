@@ -81,7 +81,8 @@ public class Prescription {
    	}
 
    	//toString Method
-   	public  String toString() {
+   	@Override
+	public  String toString() {
    		String aString = "";
    		aString = "Prescription ID: " + this.prescriptionID + "\n";
    		aString += "Medication: " + this.medication + "\n";

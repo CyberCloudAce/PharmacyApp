@@ -58,6 +58,7 @@ public class Insurance {
 		this(aID, aCompanyName, aPolicyName, "N/A");
 	}
 
+	@Override
 	public String toString() {
 		String aString = "";
 		aString = "ID: " + this.id + "\n";

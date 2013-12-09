@@ -1,5 +1,4 @@
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,7 +8,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.text.View;
 
 public class addMenu {
 
@@ -59,27 +57,32 @@ public class addMenu {
 	    frame.setVisible(true);
 	}
 	class patientButtonListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			PharmacyApp.aController.addPatientMenuStart(frame);
 		}
 	}
 	class physicianButtonListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			PharmacyApp.aController.addPhysicianMenuStart(frame);
 		}
 	}
 	class medicineButtonListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			PharmacyApp.aController.addMedicineMenuStart(frame);
 
 		}
 	}
 	class insuranceButtonListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			PharmacyApp.aController.addInsuranceMenuStart(frame);
 		}
 	}
 	class exitButtonListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			PharmacyApp.aController.shutdown();
 

@@ -49,7 +49,7 @@ public class Controller {
 	public void addPatientMenuStart(JFrame frame){
 		frame.setVisible(false);
 		addPatientMenu view2 = new addPatientMenu();
-		view2.startGui();
+		view2.startGui(frame);
 	}
 	public void addPhysicianMenuStart(JFrame frame){
 		frame.setVisible(false);
@@ -72,10 +72,10 @@ public class Controller {
 	}
 	
 	//called from addPatientMenu and updatePatientMenu
-	public void addPerscriptionMenuStart(JFrame frame){
+	public static void addPerscriptionMenuStart(JFrame frame, String aName){
 		frame.setVisible(false);
 		addPerscriptionMenu view2 = new addPerscriptionMenu();
-		view2.startGui();
+		view2.startGui(frame, aName);
 	}
 	
 	//Add methods - called from add Forms
@@ -86,11 +86,12 @@ public class Controller {
 		//Do stuff
 	}
 	
-	public static void addPerscription(String patientName, String medication, String refill, String dateIssued, String dateExpired, String physician){
-		
-
+	public static void addPerscription(PerscriptionList aList, String aName){
+		aDataAccess.addPerscriptionHistory(aList,aName);
+	}
 	
-	
+	public static void addPerscription(String aName, String mName, String refills, String dateI, String dateE, String Physician){
+		aDataAccess.addPerscription(aName,mName,refills,dateI,dateE,Physician);
 	}
 	
 	

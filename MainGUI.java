@@ -48,21 +48,25 @@ public class MainGUI {
 	}
 
 	class addButtonListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			PharmacyApp.aController.addMenuStart(frame);
 		}
 	}
 	class viewButtonListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			viewButton.setBackground(Color.PINK);	
 		}		
 	}
 	class updateButtonListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			updateButton.setBackground(Color.PINK);
 		}
 	}
 	class exitButtonListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.exit(0);
 		}

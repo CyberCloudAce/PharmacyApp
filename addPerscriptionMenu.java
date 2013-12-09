@@ -26,15 +26,19 @@ public class addPerscriptionMenu {
 	JLabel startDateLabel = new JLabel("Start Date");
 	JLabel endDateLabel = new JLabel("End Date");
 	JLabel physicianLabel = new JLabel("Physician");
-	JComboBox nameBox = new JComboBox();
+	JTextField nameBox = new JTextField();
 	JTextField refillsText = new JTextField();
 	JTextField startDateText = new JTextField();
 	JTextField endDateText = new JTextField();
-	JComboBox physicianBox = new JComboBox();
+	JTextField physicianBox = new JTextField();
 	JButton submitButton = new JButton("Save Changes");
 	JButton exitButton = new JButton("Exit Program");
+	public JFrame bFrame = new JFrame();
+	public String bName;
 
-	public void startGui(){
+	public void startGui(JFrame aFrame, String aName){
+		bFrame = aFrame; //for Back/Submit button
+		bName = aName; //for sending name to DB
 		
 		//Set up form and panels
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -75,11 +79,15 @@ public class addPerscriptionMenu {
 		frame.setVisible(true);
 	}
 	class submitButtonListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
-			//Physician aDoctor = new Physician;
+			Controller.addPerscription(bName, nameBox.getText(),refillsText.getText(),startDateText.getText(),endDateText.getText(),physicianBox.getText());
+			bFrame.setVisible(true);
+			frame.setVisible(false);
 		}
 	}
 	class exitButtonListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.exit(0);
 		}

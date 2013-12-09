@@ -30,6 +30,24 @@ public class DataAccessClass {
 			System.out.println("have you tried turning it on and off again?");
 		}
 	}
+	public void addPerscription(String aName,String mName, String refills, String dateI, String dateE, String physician){
+		try { //Must use try catch with DB connection - Mongo class throws UnknownHostException
+			Mongo aMongo = new Mongo("136.224.251.233"); //.91.185 on wifi .251.233 in peet
+			DB db = aMongo.getDB("database"); //not sure what this does but apparently it's necessary
+			DBCollection coll = db.getCollection("perscriptions"); //mongoDB collections are like tables in any RDBMS
+			BasicDBObject record = new BasicDBObject("name",aName).
+				append("medication", mName).
+		        append("refills",refills). //this creates the JSON to insert
+		        append("dateissued",dateI).		//append function adds a new element to the JSON
+		        append("dateexpired",dateE).
+		        append("physician",physician);
+			coll.insert(record); //inserts the record into the patients collection. this is the line of code that actually establishes the connection
+			aMongo.close(); //closes the mongoDB connection
+		} catch (UnknownHostException e) {
+			//you should probably try to start the server if this code runs
+			System.out.println("have you tried turning it on and off again?");
+		}
+	}
 	public void addPerscriptionHistory(PerscriptionList aHistory, String aName){
 		try { //Must use try catch with DB connection - Mongo class throws UnknownHostException
 			Mongo aMongo = new Mongo("136.224.251.233"); //.91.185 on wifi .251.233 in peet

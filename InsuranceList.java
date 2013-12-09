@@ -37,6 +37,7 @@ public class InsuranceList{
 		return aList.size();
 	}
 	
+	@Override
 	public String toString(){
 		String aString = "";
 		for(Insurance aPolicy:aList){

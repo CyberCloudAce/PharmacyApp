@@ -69,6 +69,7 @@ public class Patient {
 			this.perscriptionHist = aPerscriptionHist;
 	}
 	
+	@Override
 	public String toString() {
 		String aString = "";
 		aString = "Name: " + this.name + "\n";

@@ -54,6 +54,7 @@ public class Medication {
 		this.sideEffects = aSideEffects;
 	}
 
+	@Override
 	public String toString() {
 		String aString = "";
 		aString = "ID: " + this.id + "\n";

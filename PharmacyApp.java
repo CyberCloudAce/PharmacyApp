@@ -1,5 +1,4 @@
-import java.net.UnknownHostException;
-import com.mongodb.*;
+
 
 public class PharmacyApp {
 	

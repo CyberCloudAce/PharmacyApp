@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -34,8 +33,11 @@ public class addPatientMenu {
 	JButton perscriptionButton = new JButton("Add Perscription to Patient's history");
 	JButton submitButton = new JButton("Save Changes");
 	JButton exitButton = new JButton("Exit Program");
+	public String bName;
+	public JFrame bFrame = new JFrame();
 
-	public void startGui(){
+	public void startGui(JFrame aFrame){
+		bFrame = aFrame;
 		
 		//Set up form and panels
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -75,23 +77,27 @@ public class addPatientMenu {
 		frame.setVisible(true);
 	}
 	class perscriptionButtonListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
-			addPerscriptionMenu view4 = new addPerscriptionMenu();
-			view4.startGui();
-			frame.setVisible(false);
+			bName = firstNameLabel.getText() +  " " + lastNameLabel.getText();
+			Controller.addPerscriptionMenuStart(frame,bName);
+			
 		}
 	}
 	class submitButtonListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			Controller.addPatient(firstNameText.getText(),
 									lastNameText.getText(),
 									phoneText.getText(),
 									dobText.getText(),
 									insuranceBox.getText());
-					
+			bFrame.setVisible(true);
+			frame.setVisible(false);
 		}
 	}
 	class exitButtonListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.exit(0);
 		}
