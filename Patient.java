@@ -33,8 +33,6 @@ public class Patient {
 		this.perscriptionHist = aList;
 	}
 	
-	
-	
 	public int getID(){
 		return this.id;
 	}

@@ -135,13 +135,11 @@ public class DataAccessClass {
 			aPatient.setId(Integer.parseInt(aID));
 			String aName = "This shouldn't be here call an expert";
 			while(cursor.hasNext()) { //loop through all results
-		       System.out.println(cursor.next()); 
-		       System.out.println(cursor.next().get("name")); 
 		       aPatient.setName(cursor.next().get("name").toString());
 		       aName = cursor.next().get("name").toString();
-		       aPatient.setName(cursor.next().get("phone").toString());
-		       aPatient.setName(cursor.next().get("dob").toString());
-		       aPatient.setName(cursor.next().get("insurance").toString());
+		       aPatient.setPhoneNum(cursor.next().get("phone").toString());
+		       aPatient.setDOB(cursor.next().get("dob").toString());
+		       aPatient.setInsuranceProvider(cursor.next().get("insurance").toString());
 			}
 			cursor.close();
 			aMongo.close();
@@ -178,35 +176,89 @@ public class DataAccessClass {
 			return null;
 		}
 	}
-	public Medication getMedication(){
-		
-		return null;
+	public Medication getMedication(String aID){
+		try {
+			Mongo aMongo = new Mongo("136.224.251.233"); //91.185 on wifi 251.233 in peet
+			DB db = aMongo.getDB("database");
+			DBCollection coll = db.getCollection("medications");
+			BasicDBObject query = new BasicDBObject("id", aID); //desired result
+			DBCursor cursor = coll.find(query); //connects and find desired results
+			Medication aMedication = new Medication(); //create an empty patient to fill with the info from the json
+			aMedication.setID(Integer.parseInt(aID));
+			while(cursor.hasNext()) { //loop through all results
+		       aMedication.setName(cursor.next().get("name").toString());
+		       aMedication.setCost(Double.parseDouble(cursor.next().get("cost").toString()));
+		       aMedication.setSideEffects(cursor.next().get("sideeffects").toString());
+			}
+			cursor.close();
+			aMongo.close();
+			return aMedication;
+		} catch (UnknownHostException e) {
+			//check that Database IP and panic a little bit cause this code should never run
+			return null;
+		}
 	}
-	public Insurance getInsurance(){
-		
-		return null;
+	public Insurance getInsurance(String aID){
+		try {
+			Mongo aMongo = new Mongo("136.224.251.233"); //91.185 on wifi 251.233 in peet
+			DB db = aMongo.getDB("database");
+			DBCollection coll = db.getCollection("insurances");
+			BasicDBObject query = new BasicDBObject("id", aID); //desired result
+			DBCursor cursor = coll.find(query); //connects and find desired results
+			Insurance aInsurance = new Insurance(); //create an empty patient to fill with the info from the json
+			aInsurance.setID(Integer.parseInt(aID));
+			while(cursor.hasNext()) { //loop through all results
+		       aInsurance.setCompanyName(cursor.next().get("company").toString());
+		       aInsurance.setPolicyName(cursor.next().get("policy").toString());
+		       aInsurance.setProviderPhoneNum(cursor.next().get("phone").toString());
+			}
+			cursor.close();
+			aMongo.close();
+			return aInsurance;
+		} catch (UnknownHostException e) {
+			//check that Database IP and panic a little bit cause this code should never run
+			return null;
+		}
 	}
-	public Physician getPhysician(){
-		
-		return null;
+	public Physician getPhysician(String aID){
+		try {
+			Mongo aMongo = new Mongo("136.224.251.233"); //91.185 on wifi 251.233 in peet
+			DB db = aMongo.getDB("database");
+			DBCollection coll = db.getCollection("physicians");
+			BasicDBObject query = new BasicDBObject("id", aID); //desired result
+			DBCursor cursor = coll.find(query); //connects and find desired results
+			Physician aPhysician = new Physician(); //create an empty patient to fill with the info from the json
+			aPhysician.setID(Integer.parseInt(aID));
+			while(cursor.hasNext()) { //loop through all results
+		       aPhysician.setFirstName(cursor.next().get("firstname").toString());
+		       aPhysician.setLastName(cursor.next().get("lastname").toString());
+		       aPhysician.setPhone(cursor.next().get("phone").toString());
+			}
+			cursor.close();
+			aMongo.close();
+			return aPhysician;
+		} catch (UnknownHostException e) {
+			//check that Database IP and panic a little bit cause this code should never run
+			return null;
+		}
 	}
 	
 	
-	public void getAllPatients(){
+	public PatientList getAllPatients(){
 		
-		
+		return null;
 	}
-	public void getAllInsurance(){
+	public InsuranceList getAllInsurance(){
 		
-		
+		return null;
 	}
-	public void getAllMedications(){
+	public MedicationList getAllMedications(){
 		
-		
+		return null;
 	}
-	public void getAllPhysicians(){
+	public PhysicianList getAllPhysicians(){
 		
-		
+		return null;
 	}
 	
 	
