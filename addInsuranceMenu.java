@@ -22,14 +22,17 @@ public class addInsuranceMenu {
 	JLabel infoLabel1 = new JLabel("Add a new Insurance Policy");
 	JLabel providerLabel = new JLabel("Provider Name");
 	JLabel policyLabel = new JLabel("Policy Name");
-	JLabel descriptionLabel = new JLabel("Description");
+	JLabel phoneLabel = new JLabel("Phone Num");
 	JTextField providerText = new JTextField();
 	JTextField policyText = new JTextField();
-	JTextField descriptionText = new JTextField();
+	JTextField phoneText = new JTextField();
 	JButton submitButton = new JButton("Save Changes");
 	JButton exitButton = new JButton("Exit Program");
-
-	public void startGui(){
+	JFrame bFrame = new JFrame();
+	
+	
+	public void startGui(JFrame aFrame){
+		bFrame = aFrame;
 		
 		//Set up form and panels
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,8 +55,8 @@ public class addInsuranceMenu {
 		MainPanel.add(providerText);
 		MainPanel.add(policyLabel);
 		MainPanel.add(policyText);
-		MainPanel.add(descriptionLabel);
-		MainPanel.add(descriptionText);
+		MainPanel.add(phoneLabel);
+		MainPanel.add(phoneText);
 		bottomPanel.add(submitButton);
 		bottomPanel.add(exitButton);
 		
@@ -66,7 +69,9 @@ public class addInsuranceMenu {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			//Insurance aPolicy = new Insurance();
-			
+			Controller.addInsurance(providerText.getText(), policyText.getText(), phoneText.getText());
+			frame.setVisible(false);
+			bFrame.setVisible(true);
 		}
 	}
 	class exitButtonListener implements ActionListener {

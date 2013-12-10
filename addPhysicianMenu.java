@@ -71,7 +71,7 @@ public class addPhysicianMenu {
 	class submitButtonListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			//Physician aDoctor = new Physician;
+			Controller.addPhysician(firstNameText.getText(),lastNameText.getText(),addressText.getText(),phoneText.getText());
 			bFrame.setVisible(true);
 			frame.setVisible(false);
 		}

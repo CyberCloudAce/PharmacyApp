@@ -63,7 +63,7 @@ public class Controller {
 	public void addInsuranceMenuStart(JFrame frame){
 		frame.setVisible(false);
 		addInsuranceMenu view2 = new addInsuranceMenu();
-		view2.startGui();
+		view2.startGui(frame);
 	}
 	public void addMedicineMenuStart(JFrame frame){
 		frame.setVisible(false);
@@ -89,10 +89,17 @@ public class Controller {
 	public static void addPerscription(PerscriptionList aList, String aName){
 		aDataAccess.addPerscriptionHistory(aList,aName);
 	}
-	
 	public static void addPerscription(String aName, String mName, String refills, String dateI, String dateE, String Physician){
 		aDataAccess.addPerscription(aName,mName,refills,dateI,dateE,Physician);
 	}
 	
+	public static void addPhysician(String firstName, String lastName, String address, String phone){
+		int randomID = (int) Math.floor(Math.random() * 500000);
+		aDataAccess.addPhysician(randomID, firstName, lastName, address, phone);
+	}
 	
+	public static void addInsurance(String company, String policy, String phone){
+		int randomID = (int) Math.floor(Math.random() * 500000);
+		aDataAccess.addInsurance(randomID, company, policy, phone);
+	}
 }

@@ -70,14 +70,15 @@ public class DataAccessClass {
 			System.out.println("have you tried turning it on and off again?");
 		}
 	}
-	public void addPhysician(int aID, String aFirstName, String aLastName, String aPhone){
+	public void addPhysician(int aID, String aFirstName, String aLastName, String aAddress, String aPhone){
 		try { //Must use try catch with DB connection - Mongo class throws UnknownHostException
 			Mongo aMongo = new Mongo("136.224.251.233"); //.91.185 on wifi .251.233 in peet
 			DB db = aMongo.getDB("database"); //not sure what this does but apparently it's necessary
 			DBCollection coll = db.getCollection("physicians"); //mongoDB collections are like tables in any RDBMS
 			BasicDBObject record = new BasicDBObject("id",aID).
 				append("firstname",aFirstName).
-				append("lastname",aLastName).//append function adds a new element to the JSON
+				append("lastname",aLastName).
+				append("address",aAddress).//append function adds a new element to the JSON
 		        append("phone",aPhone); //this creates the JSON to insert
 			coll.insert(record); //inserts the record into the patients collection. this is the line of code that actually establishes the connection
 			aMongo.close(); //closes the mongoDB connection
