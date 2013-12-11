@@ -32,9 +32,10 @@ public class ViewPerscriptionMenu {
     JLabel physicianLabel = new JLabel("");
     JButton returnButton = new JButton("Return");
     JButton exitButton = new JButton("Exit Program");
-
-    public void startGui(String medication, String refill, String startDate, String endDate, String physician){
-
+    JFrame bFrame = new JFrame();
+    
+    public void startGui(String medication, String refill, String startDate, String endDate, String physician, JFrame aFrame){
+	bFrame = aFrame;
     	//Set up form and panels
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400,220);
@@ -76,7 +77,8 @@ public class ViewPerscriptionMenu {
     }
     class returnButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-               
+               frame.setVisible(false);
+               bFrame.setVisible(true);
         }
     }
     class exitButtonListener implements ActionListener {
