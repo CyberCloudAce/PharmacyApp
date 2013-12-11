@@ -76,10 +76,10 @@ public class updateMedicineMenu {
 	class submitButtonListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			//Controller.updateMedicine(nameText.getText(), descriptionText.getText(), sideEffectsText.getText());
-			// radio button submit? 	JRadioButtonMenuItem()
-      //frame.setVisible(false);
-      //bFrame.setVisible(true);
+		//Controller.updateMedicine(nameText.getText(), descriptionText.getText(), sideEffectsText.getText());
+		// radio button submit? 	JRadioButtonMenuItem()
+      		//frame.setVisible(false);
+      		//bFrame.setVisible(true);
 		}
 	}
 	class exitButtonListener implements ActionListener {
