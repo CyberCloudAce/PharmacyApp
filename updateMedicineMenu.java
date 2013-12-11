@@ -33,8 +33,11 @@ public class updateMedicineMenu {
 	JTextField sideEffectsText = new JTextField(4);
 	JButton submitButton = new JButton("Save Changes");
 	JButton exitButton = new JButton("Exit Program");
+	JFrame bFrame = new JFrame();
 	
-	public void startGui(){
+	public void startGui(JFrame aFrame){
+		bFrame = aFrame;
+		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(400,260);
 		frame.add(topPanel,BorderLayout.NORTH);
@@ -76,10 +79,10 @@ public class updateMedicineMenu {
 	class submitButtonListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-		//Controller.updateMedicine(nameText.getText(), descriptionText.getText(), sideEffectsText.getText());
+		Controller.updateMedicine(nameText.getText(), descriptionText.getText(), sideEffectsText.getText());
 		// radio button submit? JRadioButtonMenuItem()
-      		//frame.setVisible(false);
-      		//bFrame.setVisible(true);
+      		frame.setVisible(false);
+      		bFrame.setVisible(true);
 		}
 	}
 	class exitButtonListener implements ActionListener {
