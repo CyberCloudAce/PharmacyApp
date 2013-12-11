@@ -278,5 +278,25 @@ public class DataAccessClass {
 	}
 	
 	
+	public void updatePatient(){
+		
+		
+	}
+	public void updatePerscription(){
+		
+		
+	}
+	public void updateMedication(){
+		
+		
+	}
+	public void updateInsurance(){
+		
+		
+	}
+	public void updatePhysician(){
+		
+		
+	}
 	
 }

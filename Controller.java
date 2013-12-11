@@ -175,24 +175,24 @@ public class Controller {
 		
 		return null;
 	}
-	public static void UpdatePatient(){
-		
-		
-	}
-	public static void UpdatePerscription(){
-		
+	public static void updatePatient(String name, String phone, String dob, String insurance){
+		aDataAccess.updatePatient(name,phone,dob,insurance);
 		
 	}
-	public static void UpdateInsurance(){
-		
-		
-	}
-	public static void UpdateMedication(){
-		
+	public static void updatePerscription(String medication, String refill, String dateI, String dateE, String physician){
+		aDataAccess.updatePerscription(medication,refill,dateI,dateE,physician);
 		
 	}
-	public static void UpdatePhysician(){
+	public static void updateInsurance(String company, String policy, String phone){
+		aDataAccess.updateInsurance(company,policy,phone);
 		
+	}
+	public static void updateMedication(){
+		aDataAccess.updateMedication();
+		
+	}
+	public static void updatePhysician(){
+		aDataAccess.updatePhysician();
 		
 	}
 }
