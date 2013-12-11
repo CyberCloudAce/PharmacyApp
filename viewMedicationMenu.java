@@ -27,9 +27,10 @@ public class viewMedicationMenu {
     JLabel sideEffectsLabel = new JLabel("");
     JButton returnButton = new JButton("Return");
     JButton exitButton = new JButton("Exit Program");
-
-    public void startGui(String name, String cost, String effects){
-
+    JFrame bFrame = new JFrame();
+    
+    public void startGui(String name, String cost, String effects, JFrame aFrame){
+		bFrame = aFrame;
     	//Set up form and panels
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400,220);
@@ -67,7 +68,8 @@ public class viewMedicationMenu {
     class returnButtonListener implements ActionListener {
         @Override
 		public void actionPerformed(ActionEvent e) {
-               
+        	frame.setVisible(false);
+            bFrame.setVisible(true);       
         }
     }
     class exitButtonListener implements ActionListener {
