@@ -28,24 +28,21 @@ public class Controller {
 		MainGUI view = new MainGUI();
 		view.startGUI();
 	}
-	//called from MainGUI
 	public void addMenuStart(JFrame frame){
 		frame.setVisible(false);
 		addMenu view2 = new addMenu();
-		view2.startGUI();
+		view2.startGUI(frame);
 	}
 	public void updateMenuStart(JFrame frame){
 		frame.setVisible(false);
-		//updateMenu view2 = new updateMenu();
-		//view2.startGUI();
+		updateMenu view2 = new updateMenu();
+		view2.startGUI(frame);
 	}
 	public void viewMenuStart(JFrame frame){
 		frame.setVisible(false);
-		//viewMenu view2 = new viewMenu();
-		//view2.startGUI();
+		viewMenu view2 = new viewMenu();
+		view2.startGUI(frame);
 	}
-	
-	//called from add forms
 	public void addPatientMenuStart(JFrame frame){
 		frame.setVisible(false);
 		addPatientMenu view2 = new addPatientMenu();
@@ -55,10 +52,6 @@ public class Controller {
 		frame.setVisible(false);
 		addPhysicianMenu view2 = new addPhysicianMenu();
 		view2.startGui(frame);
-		
-	}
-	public void closeAddPhysicianMenu(JFrame frame){
-		frame.setVisible(true);
 	}
 	public void addInsuranceMenuStart(JFrame frame){
 		frame.setVisible(false);
@@ -68,7 +61,47 @@ public class Controller {
 	public void addMedicineMenuStart(JFrame frame){
 		frame.setVisible(false);
 		addMedicineMenu view2 = new addMedicineMenu();
-		view2.startGui();
+		view2.startGui(frame);
+	}
+	public void viewMedicineMenuStart(JFrame frame){
+		frame.setVisible(false);
+		viewMedicationMenu view2 = new viewMedicationMenu();
+		view2.startGui(frame);
+	}
+	public void viewPatientMenuStart(JFrame frame){
+		frame.setVisible(false);
+		viewPatientMenu view2 = new viewPatientMenu();
+		view2.startGui(frame);
+	}
+	public void viewPerscriptionMenuStart(JFrame frame){
+		frame.setVisible(false);
+		ViewPerscriptionMenu view2 = new ViewPerscriptionMenu();
+		view2.startGui(frame);
+	}
+	public void viewInsuranceMenuStart(JFrame frame){
+		frame.setVisible(false);
+		viewInsuranceMenu view2 = new viewInsuranceMenu();
+		view2.startGui(frame);
+	}
+	public void viewPhysicianMenuStart(JFrame frame){
+		frame.setVisible(false);
+		viewPhysicianMenu view2 = new viewPhysicianMenu();
+		view2.startGui(frame);
+	}
+	public void updatePhysicianMenuStart(JFrame frame){
+		frame.setVisible(false);
+		updatePhysicianMenu view2 = new updatePhysicianMenu();
+		view2.startGui(frame);
+	}
+	public void updateInsuranceMenuStart(JFrame frame){
+		frame.setVisible(false);
+		updateInsuranceMenu view2 = new updateInsuranceMenu();
+		view2.startGui(frame);
+	}
+	public void updateMedicationMenuStart(JFrame frame){
+		frame.setVisible(false);
+		updateMedicineMenu view2 = new updateMedicineMenu();
+		view2.startGui(frame);
 	}
 	
 	//called from addPatientMenu and updatePatientMenu

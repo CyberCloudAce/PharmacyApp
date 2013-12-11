@@ -6,12 +6,8 @@ import com.mongodb.*;
 public class DataAccessClass {
 	/* The purpose of this class is to connect to the MongoDB server running on a VM server
 	 * 
-	 * as of 12/6 the VM Server is on Jeff's Laptop
-	 * because of this the IP will change depending on the location of the VM
-	 * 
-	 * Trying to move VM to a permanent place
-	 * May be migrated to a server in SET 446 soon
-	 * Or on an ESXI server
+	 * UPDATE 12/11 The server is now running at 136.224.250.156
+	 * have fun
 	 */
 	public void addPatient(int aID, String aName, String aPhone, String aDOB, String aInsurance){
 		try { //Must use try catch with DB connection - Mongo class throws UnknownHostException
@@ -244,7 +240,6 @@ public class DataAccessClass {
 	}
 	
 	
-	
 	/*public PatientList getAllPatients(){
 		try {
 			Mongo aMongo = new Mongo("136.224.250.156"); //91.185 on wifi 251.233 in peet
@@ -265,7 +260,7 @@ public class DataAccessClass {
 		}
 		return null;
 	}*/
-	public InsuranceList getAllInsurance(){
+	public InsuranceList getAllInsurances(){
 		
 		return null;
 	}
@@ -274,6 +269,10 @@ public class DataAccessClass {
 		return null;
 	}
 	public PhysicianList getAllPhysicians(){
+		
+		return null;
+	}
+	public PerscriptionList getAllPerscriptions(){
 		
 		return null;
 	}
