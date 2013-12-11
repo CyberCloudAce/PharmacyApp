@@ -77,7 +77,7 @@ public class updateMedicineMenu {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 		//Controller.updateMedicine(nameText.getText(), descriptionText.getText(), sideEffectsText.getText());
-		// radio button submit? 	JRadioButtonMenuItem()
+		// radio button submit? JRadioButtonMenuItem()
       		//frame.setVisible(false);
       		//bFrame.setVisible(true);
 		}
