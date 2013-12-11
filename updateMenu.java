@@ -21,8 +21,10 @@ public class updateMenu {
         JPanel MainPanel = new JPanel();
         JPanel topPanel = new JPanel();
         JLabel infoLabel1 = new JLabel("Click a button to update a record");
+        JFrame bFrame = new JFrame();
 
-        public void startGUI() {
+        public void startGUI(JFrame aFrame) {
+                bFrame = aFrame;
                 
                 //Set up form and panels
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -82,7 +84,8 @@ public class updateMenu {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                         PharmacyApp.aController.shutdown();
-
+                        bFrame.setVisible(true);
                 }
+                
         }
 }
