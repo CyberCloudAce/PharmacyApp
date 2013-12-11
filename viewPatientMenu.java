@@ -11,7 +11,7 @@ import javax.swing.border.EmptyBorder;
 
 public class viewPatientMenu {
 
-	//initialize form elements
+    //initialize form elements
     JFrame frame = new JFrame("Main Menu");
     JPanel mainPanel = new JPanel();
     JPanel topPanel = new JPanel();
@@ -29,8 +29,10 @@ public class viewPatientMenu {
     JLabel insuranceProviderLabel = new JLabel("");
     JButton returnButton = new JButton("Return");
     JButton exitButton = new JButton("Exit Program");
+    JFrame bFrame = new JFrame();
 
-    public void startGui(String name, String num, String dob, String insuranceProvider){
+    public void startGui(String name, String num, String dob, String insuranceProvider, JFrame aFrame){
+    	bFrame = aFrame;
 
     	//Set up form and panels
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -71,7 +73,8 @@ public class viewPatientMenu {
     class returnButtonListener implements ActionListener {
         @Override
 		public void actionPerformed(ActionEvent e) {
-               
+                frame.setVisible(false);
+                bFrame.setVisible(true);
         }
     }
     class exitButtonListener implements ActionListener {
