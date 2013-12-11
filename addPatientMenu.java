@@ -79,7 +79,7 @@ public class addPatientMenu {
 	class perscriptionButtonListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			bName = firstNameLabel.getText() +  " " + lastNameLabel.getText();
+			bName = firstNameText.getText() +  " " + lastNameText.getText();
 			Controller.addPerscriptionMenuStart(frame,bName);
 			
 		}

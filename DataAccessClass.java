@@ -15,7 +15,7 @@ public class DataAccessClass {
 	 */
 	public void addPatient(int aID, String aName, String aPhone, String aDOB, String aInsurance){
 		try { //Must use try catch with DB connection - Mongo class throws UnknownHostException
-			Mongo aMongo = new Mongo("136.224.251.233"); //.91.185 on wifi .251.233 in peet
+			Mongo aMongo = new Mongo("136.224.250.156"); //.91.185 on wifi .251.233 in peet
 			DB db = aMongo.getDB("database"); //not sure what this does but apparently it's necessary
 			DBCollection coll = db.getCollection("patients"); //mongoDB collections are like tables in any RDBMS
 			BasicDBObject record = new BasicDBObject("id",aID).
@@ -32,7 +32,7 @@ public class DataAccessClass {
 	}
 	public void addPerscription(String aName,String mName, String refills, String dateI, String dateE, String physician){
 		try { //Must use try catch with DB connection - Mongo class throws UnknownHostException
-			Mongo aMongo = new Mongo("136.224.251.233"); //.91.185 on wifi .251.233 in peet
+			Mongo aMongo = new Mongo("136.224.250.156"); //.91.185 on wifi .251.233 in peet
 			DB db = aMongo.getDB("database"); //not sure what this does but apparently it's necessary
 			DBCollection coll = db.getCollection("perscriptions"); //mongoDB collections are like tables in any RDBMS
 			BasicDBObject record = new BasicDBObject("name",aName).
@@ -50,7 +50,7 @@ public class DataAccessClass {
 	}
 	public void addPerscriptionHistory(PerscriptionList aHistory, String aName){
 		try { //Must use try catch with DB connection - Mongo class throws UnknownHostException
-			Mongo aMongo = new Mongo("136.224.251.233"); //.91.185 on wifi .251.233 in peet
+			Mongo aMongo = new Mongo("136.224.250.156"); //.91.185 on wifi .251.233 in peet
 			DB db = aMongo.getDB("database"); //not sure what this does but apparently it's necessary
 			DBCollection coll = db.getCollection("perscriptions"); //mongoDB collections are like tables in any RDBMS
 			List<Prescription> aList = new ArrayList<Prescription>(aHistory.getList());
@@ -72,7 +72,7 @@ public class DataAccessClass {
 	}
 	public void addPhysician(int aID, String aFirstName, String aLastName, String aAddress, String aPhone){
 		try { //Must use try catch with DB connection - Mongo class throws UnknownHostException
-			Mongo aMongo = new Mongo("136.224.251.233"); //.91.185 on wifi .251.233 in peet
+			Mongo aMongo = new Mongo("136.224.250.156"); //.91.185 on wifi .251.233 in peet
 			DB db = aMongo.getDB("database"); //not sure what this does but apparently it's necessary
 			DBCollection coll = db.getCollection("physicians"); //mongoDB collections are like tables in any RDBMS
 			BasicDBObject record = new BasicDBObject("id",aID).
@@ -89,7 +89,7 @@ public class DataAccessClass {
 	}
 	public void addInsurance(int aID, String aCompany, String aPolicy, String aPhone){
 		try { //Must use try catch with DB connection - Mongo class throws UnknownHostException
-			Mongo aMongo = new Mongo("136.224.251.233"); //.91.185 on wifi .251.233 in peet
+			Mongo aMongo = new Mongo("136.224.250.156"); //.91.185 on wifi .251.233 in peet
 			DB db = aMongo.getDB("database"); //not sure what this does but apparently it's necessary
 			DBCollection coll = db.getCollection("insurances"); //mongoDB collections are like tables in any RDBMS
 			BasicDBObject record = new BasicDBObject("id",aID).
@@ -105,7 +105,7 @@ public class DataAccessClass {
 	}
 	public void addMedication(int aID, String aName, Double aCost, String aEffects){
 		try { //Must use try catch with DB connection - Mongo class throws UnknownHostException
-			Mongo aMongo = new Mongo("136.224.251.233"); //.91.185 on wifi .251.233 in peet
+			Mongo aMongo = new Mongo("136.224.250.156"); //.91.185 on wifi .251.233 in peet
 			DB db = aMongo.getDB("database"); //not sure what this does but apparently it's necessary
 			DBCollection coll = db.getCollection("medications"); //mongoDB collections are like tables in any RDBMS
 			BasicDBObject record = new BasicDBObject("id",aID).
@@ -126,7 +126,7 @@ public class DataAccessClass {
 	
 	public Patient getPatient(String aID){
 		try {
-			Mongo aMongo = new Mongo("136.224.251.233"); //91.185 on wifi 251.233 in peet
+			Mongo aMongo = new Mongo("136.224.250.156"); //91.185 on wifi 251.233 in peet
 			DB db = aMongo.getDB("database");
 			DBCollection coll = db.getCollection("patients");
 			BasicDBObject query = new BasicDBObject("id", aID); //desired result
@@ -152,7 +152,7 @@ public class DataAccessClass {
 	}	
 	public PerscriptionList getPerscriptionHistory(String aName){
 		try {
-			Mongo aMongo = new Mongo("136.224.251.233"); //91.185 on wifi 251.233 in peet
+			Mongo aMongo = new Mongo("136.224.250.156"); //91.185 on wifi 251.233 in peet
 			DB db = aMongo.getDB("database");
 			DBCollection coll = db.getCollection("perscriptions");
 			BasicDBObject query = new BasicDBObject("name", aName); //desired result
@@ -178,7 +178,7 @@ public class DataAccessClass {
 	}
 	public Medication getMedication(String aID){
 		try {
-			Mongo aMongo = new Mongo("136.224.251.233"); //91.185 on wifi 251.233 in peet
+			Mongo aMongo = new Mongo("136.224.250.156"); //91.185 on wifi 251.233 in peet
 			DB db = aMongo.getDB("database");
 			DBCollection coll = db.getCollection("medications");
 			BasicDBObject query = new BasicDBObject("id", aID); //desired result
@@ -200,7 +200,7 @@ public class DataAccessClass {
 	}
 	public Insurance getInsurance(String aID){
 		try {
-			Mongo aMongo = new Mongo("136.224.251.233"); //91.185 on wifi 251.233 in peet
+			Mongo aMongo = new Mongo("136.224.250.156"); //91.185 on wifi 251.233 in peet
 			DB db = aMongo.getDB("database");
 			DBCollection coll = db.getCollection("insurances");
 			BasicDBObject query = new BasicDBObject("id", aID); //desired result
@@ -222,7 +222,7 @@ public class DataAccessClass {
 	}
 	public Physician getPhysician(String aID){
 		try {
-			Mongo aMongo = new Mongo("136.224.251.233"); //91.185 on wifi 251.233 in peet
+			Mongo aMongo = new Mongo("136.224.250.156"); //91.185 on wifi 251.233 in peet
 			DB db = aMongo.getDB("database");
 			DBCollection coll = db.getCollection("physicians");
 			BasicDBObject query = new BasicDBObject("id", aID); //desired result
