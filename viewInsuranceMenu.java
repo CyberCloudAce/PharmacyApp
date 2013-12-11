@@ -27,8 +27,10 @@ public class viewInsuranceMenu {
     JLabel descriptionLabel = new JLabel("");
     JButton returnButton = new JButton("Return");
     JButton exitButton = new JButton("Exit Program");
+    JFrame bFrame = new JFrame();
 
-    public void startGui(String provider, String policy, String description){
+    public void startGui(String provider, String policy, String description, JFrame aFrame){
+    	bFrame = aFrame;
 
     	//Set up form and panels
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,7 +69,8 @@ public class viewInsuranceMenu {
     class returnButtonListener implements ActionListener {
         @Override
 		public void actionPerformed(ActionEvent e) {
-               
+                frame.setVisible(false);
+                bFrame.setVisible(true);
         }
     }
     class exitButtonListener implements ActionListener {
