@@ -244,10 +244,27 @@ public class DataAccessClass {
 	}
 	
 	
-	public PatientList getAllPatients(){
-		
+	
+	/*public PatientList getAllPatients(){
+		try {
+			Mongo aMongo = new Mongo("136.224.250.156"); //91.185 on wifi 251.233 in peet
+			DB db = aMongo.getDB("database");
+			DBCollection coll = db.getCollection("patients");
+			DBCursor cursor = coll.find(); //connects and find desired results
+			while(cursor.hasNext()) { //loop through all results
+		       aPatient.setFirstName(cursor.next().get("firstname").toString());
+		       aPhysician.setLastName(cursor.next().get("lastname").toString());
+		       aPhysician.setPhone(cursor.next().get("phone").toString());
+			}
+			cursor.close();
+			aMongo.close();
+			return aPhysician;
+		} catch (UnknownHostException e) {
+			//check that Database IP and panic a little bit cause this code should never run
+			return null;
+		}
 		return null;
-	}
+	}*/
 	public InsuranceList getAllInsurance(){
 		
 		return null;

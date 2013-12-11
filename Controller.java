@@ -102,4 +102,64 @@ public class Controller {
 		int randomID = (int) Math.floor(Math.random() * 500000);
 		aDataAccess.addInsurance(randomID, company, policy, phone);
 	}
+	public static Patient getPatient(){
+		
+		return null;
+	}
+	public static Prescription getPerscription(){
+		
+		return null;
+	}
+	public static Insurance getInsurance(){
+		
+		return null;
+	}
+	public static Medication getMedication(){
+		
+		return null;
+	}
+	public static Physician getPhysician(){
+		
+		return null;
+	}
+	public static PerscriptionList getAllPerscriptions(){
+		
+		return null;
+	}
+	public static InsuranceList getAllInsurances(){
+		
+		return null;
+	}
+	public static PatientList getAllPatients(){
+		
+		return null;
+	}
+	public static MedicationList getAllMedications(){
+		
+		return null;
+	}
+	public static PhysicianList getAllPhysicians(){
+		
+		return null;
+	}
+	public static void UpdatePatient(){
+		
+		
+	}
+	public static void UpdatePerscription(){
+		
+		
+	}
+	public static void UpdateInsurance(){
+		
+		
+	}
+	public static void UpdateMedication(){
+		
+		
+	}
+	public static void UpdatePhysician(){
+		
+		
+	}
 }
