@@ -21,9 +21,10 @@ public class viewMenu {
         JPanel MainPanel = new JPanel();
         JPanel topPanel = new JPanel();
         JLabel infoLabel1 = new JLabel("Click a button to view a record");
+        JFrame bFrame = new JFrame();
 
-        public void startGUI() {
-                
+        public void startGUI(JFrame aFrame){
+                bFrame = aFrame;
                 //Set up form and panels
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setSize(400,200);
@@ -82,7 +83,8 @@ public class viewMenu {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                         PharmacyApp.aController.shutdown();
-
+                        frame.setVisible(false);
+                        bFrame.setVisible(true);
                 }
         }
 }
