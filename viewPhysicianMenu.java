@@ -27,9 +27,9 @@ public class viewPhysicianMenu {
     JLabel phoneLabel = new JLabel("");
     JButton returnButton = new JButton("Return");
     JButton exitButton = new JButton("Exit Program");
-
-    public void startGui(String firstName, String lastName, String phoneNum){
-
+    JFrame bFrame = new JFrame();	
+    public void startGui(String firstName, String lastName, String phoneNum, JFrame aFrame){
+	bFrame = aFrame;
     	//Set up form and panels
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400,220);
@@ -66,7 +66,8 @@ public class viewPhysicianMenu {
     class returnButtonListener implements ActionListener {
         @Override
 		public void actionPerformed(ActionEvent e) {
-               
+                frame.setVisible(false);
+                bFrame.setVisible(true);
         }
     }
     class exitButtonListener implements ActionListener {
