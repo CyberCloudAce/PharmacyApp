@@ -33,8 +33,11 @@ public class addMedicineMenu {
 	JTextField sideEffectsText = new JTextField(4);
 	JButton submitButton = new JButton("Save Changes");
 	JButton exitButton = new JButton("Exit Program");
+	JFrame bFrame = new JFrame();
 	
-	public void startGui(){
+	public void startGui(JFrame aFrame){
+		bFrame = aFrame;
+		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(400,260);
 		frame.add(topPanel,BorderLayout.NORTH);
@@ -59,15 +62,9 @@ public class addMedicineMenu {
 		MainPanel.add(descriptionText);
 		MainPanel.add(sideEffectsLabel);
 		MainPanel.add(sideEffectsText);
-		MainPanel.add(genericRadio);
-		MainPanel.add(nameBrandRadio);
 		bottomPanel.add(submitButton);
 		bottomPanel.add(exitButton);
 		
-		ButtonGroup group = new ButtonGroup();
-		group.add(genericRadio);
-		group.add(nameBrandRadio);
-
 		submitButton.addActionListener(new submitButtonListener());
 	    exitButton.addActionListener(new exitButtonListener());
 	    
@@ -76,7 +73,7 @@ public class addMedicineMenu {
 	class submitButtonListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			//Physician aDoctor = new Physician;
+			Controller.addMedication(nameText.getText(),descriptionText.getText(),)
 		}
 	}
 	class exitButtonListener implements ActionListener {

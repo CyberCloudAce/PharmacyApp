@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 //coded by jeff, 12/5
-//if you couldn't tell i'm getting lazy on the comments, forgive me 
 public class PatientList {
 
 	private List<Patient> aList = new ArrayList<Patient>();
@@ -43,5 +42,11 @@ public class PatientList {
 			
 		}
 		return aString;
+	}
+
+	public void add(Patient aPatient) {
+		aList.remove(aPatient.getID());
+		aList.add(aPatient);
+		
 	}
 }

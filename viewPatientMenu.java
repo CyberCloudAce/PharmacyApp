@@ -64,7 +64,7 @@ public class viewPatientMenu {
         mainPanel.add(infoInsuranceProviderLabel);
         mainPanel.add(insuranceProviderLabel);
         bottomPanel.add(returnButton);
-        bottomPanel.add(exitButton);        
+        bottomPanel.add(exitButton);
         returnButton.addActionListener(new returnButtonListener());
         exitButton.addActionListener(new exitButtonListener());
             

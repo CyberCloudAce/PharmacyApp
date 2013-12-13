@@ -33,12 +33,12 @@ public class Controller {
 		addMenu view2 = new addMenu();
 		view2.startGUI(frame);
 	}
-	public void updateMenuStart(JFrame frame){
+	public static void updateMenuStart(JFrame frame, String type){
 		frame.setVisible(false);
 		updateMenu view2 = new updateMenu();
 		view2.startGUI(frame);
 	}
-	public void viewMenuStart(JFrame frame){
+	public void viewMenuStart(JFrame frame, String type){
 		frame.setVisible(false);
 		viewMenu view2 = new viewMenu();
 		view2.startGUI(frame);
@@ -103,6 +103,16 @@ public class Controller {
 		updateMedicineMenu view2 = new updateMedicineMenu();
 		view2.startGui(frame);
 	}
+	public void updatePatientMenuStart(JFrame frame){
+		frame.setVisible(false);
+		updatePatientMenu view2 = new updatePatientMenu();
+		view2.startGui(frame);
+	}
+	public static void updatePerscriptionMenuStart(JFrame frame){
+		frame.setVisible(false);
+		updatePerscriptionMenu view2 = new updatePerscriptionMenu();
+		view2.startGui(frame);
+	}
 	
 	//called from addPatientMenu and updatePatientMenu
 	public static void addPerscriptionMenuStart(JFrame frame, String aName){
@@ -111,14 +121,12 @@ public class Controller {
 		view2.startGui(frame, aName);
 	}
 	
-	//Add methods - called from add Forms
 	public static void addPatient(String firstName, String lastName, String phone, String dob, String insurance){
 		int randomID = (int) Math.floor(Math.random() * 500000);
 		String name = firstName + " " + lastName;
 		aDataAccess.addPatient(randomID, name, phone, dob, insurance);
 		//Do stuff
 	}
-	
 	public static void addPerscription(PerscriptionList aList, String aName){
 		aDataAccess.addPerscriptionHistory(aList,aName);
 	}
@@ -130,51 +138,42 @@ public class Controller {
 		int randomID = (int) Math.floor(Math.random() * 500000);
 		aDataAccess.addPhysician(randomID, firstName, lastName, address, phone);
 	}
-	
 	public static void addInsurance(String company, String policy, String phone){
 		int randomID = (int) Math.floor(Math.random() * 500000);
 		aDataAccess.addInsurance(randomID, company, policy, phone);
 	}
-	public static Patient getPatient(){
-		
-		return null;
+	
+	public static Patient getPatient(String id){
+		return aDataAccess.getPatient(id);
 	}
-	public static Prescription getPerscription(){
-		
-		return null;
+	public static Prescription getPerscription(String name, String medication){
+		return aDataAccess.getPerscription(name,medication);
 	}
-	public static Insurance getInsurance(){
-		
-		return null;
+	public static Insurance getInsurance(String id){
+		return aDataAccess.getInsurance(id);
 	}
-	public static Medication getMedication(){
-		
-		return null;
+	public static Medication getMedication(String id){
+		return aDataAccess.getMedication(id);
 	}
-	public static Physician getPhysician(){
-		
-		return null;
+	public static Physician getPhysician(String id){
+		return aDataAccess.getPhysician(id);
 	}
-	public static PerscriptionList getAllPerscriptions(){
-		
-		return null;
+	public static PerscriptionList getAllPerscriptions(String name){
+		return aDataAccess.getPerscriptionHistory(name);
 	}
 	public static InsuranceList getAllInsurances(){
-		
-		return null;
+		return aDataAccess.getAllInsurances();
 	}
 	public static PatientList getAllPatients(){
-		
-		return null;
+		return aDataAccess.getAllPatients();
 	}
 	public static MedicationList getAllMedications(){
-		
-		return null;
+		return aDataAccess.getAllMedications();
 	}
 	public static PhysicianList getAllPhysicians(){
-		
-		return null;
+		return aDataAccess.getAllPhysicians();
 	}
+	
 	public static void updatePatient(String name, String phone, String dob, String insurance){
 		aDataAccess.updatePatient(name,phone,dob,insurance);
 		
@@ -187,12 +186,17 @@ public class Controller {
 		aDataAccess.updateInsurance(company,policy,phone);
 		
 	}
-	public static void updateMedication(){
-		aDataAccess.updateMedication();
+	public static void updateMedication(String name, String cost, String effects){
+		aDataAccess.updateMedication(name,cost,effects);
 		
 	}
-	public static void updatePhysician(){
-		aDataAccess.updatePhysician();
+	public static void updatePhysician(String firstName, String lastName, String address, String phone){
+		aDataAccess.updatePhysician(firstName,lastName,address,phone);
 		
+	}
+
+	public static void addMedication(String name, String cost, String effects) {
+		int randomID = (int) Math.floor(Math.random() * 500000);
+		aDataAccess.addMedication(randomID, name, cost, effects);
 	}
 }

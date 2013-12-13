@@ -7,9 +7,12 @@ public class Physician{
 	private String firstName = "NA";
 	private String lastName = "NA";
 	private String phone = "NA";
+	private String address= "NA";
 
 // Sets
-
+	public void setAddress(String aAddress){
+		this.address = aAddress;
+	}
 	public void setID(int aID){
 		this.iD = aID;
 	}
@@ -36,6 +39,9 @@ public class Physician{
 	}
 	public String getPhone(){
 		return this.phone;
+	}
+	public String getAddress(){
+		return this.address;
 	}
 
 // Constructors

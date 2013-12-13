@@ -30,53 +30,55 @@ public class updateInsuranceMenu {
         JButton exitButton = new JButton("Exit Program");
         JFrame bFrame = new JFrame();
         
-        
-        public void startGui(JFrame aFrame){
-                bFrame = aFrame;
-                
-                //Set up form and panels
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setSize(400,220);
-                frame.add(topPanel,BorderLayout.NORTH);
-                frame.add(MainPanel,BorderLayout.CENTER);
-                frame.add(bottomPanel,BorderLayout.SOUTH);
-                topPanel.setBorder(new EmptyBorder(10, 10, 0, 10));
-                MainPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-                bottomPanel.setBorder(new EmptyBorder(0, 10, 10, 10));
+        public void startGui(JFrame aFrame, String provider, String policy, String phone){
+            bFrame = aFrame;
+            
+            //Set up form and panels
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(400,220);
+            frame.add(topPanel,BorderLayout.NORTH);
+            frame.add(MainPanel,BorderLayout.CENTER);
+            frame.add(bottomPanel,BorderLayout.SOUTH);
+            topPanel.setBorder(new EmptyBorder(10, 10, 0, 10));
+            MainPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+            bottomPanel.setBorder(new EmptyBorder(0, 10, 10, 10));
 
-                frame.setLocationRelativeTo(null);
-                
-                //Add items to panel. Grid layout means rows, columns, horizontal padding, vertical padding
-                topPanel.setLayout(new GridLayout(1,1,0,0));
+            frame.setLocationRelativeTo(null);
+            
+            //Add items to panel. Grid layout means rows, columns, horizontal padding, vertical padding
+            topPanel.setLayout(new GridLayout(1,1,0,0));
             MainPanel.setLayout(new GridLayout(3,2,10,10));
             bottomPanel.setLayout(new GridLayout(1,2,10,10));
             topPanel.add(infoLabel1);
-                MainPanel.add(providerLabel);
-                MainPanel.add(providerText);
-                MainPanel.add(policyLabel);
-                MainPanel.add(policyText);
-                MainPanel.add(phoneLabel);
-                MainPanel.add(phoneText);
-                bottomPanel.add(submitButton);
-                bottomPanel.add(exitButton);
-                
-                submitButton.addActionListener(new submitButtonListener());
-            exitButton.addActionListener(new exitButtonListener());
+            MainPanel.add(providerLabel);
+            MainPanel.add(providerText);
+            providerText.setText(provider);
+            MainPanel.add(policyLabel);
+            MainPanel.add(policyText);
+            policyText.setText(policy);
+            MainPanel.add(phoneLabel);
+            MainPanel.add(phoneText);
+            phoneText.setText(phone);
+            bottomPanel.add(submitButton);
+            bottomPanel.add(exitButton);
             
-                frame.setVisible(true);
+            submitButton.addActionListener(new submitButtonListener());
+            exitButton.addActionListener(new exitButtonListener());
+        
+            frame.setVisible(true);
         }
         class submitButtonListener implements ActionListener {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                        Controller.updateInsurance(providerText.getText(), policyText.getText(), phoneText.getText());
-                        frame.setVisible(false);
-                        bFrame.setVisible(true);
-                }
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                    Controller.updateInsurance(providerText.getText(), policyText.getText(), phoneText.getText());
+                    frame.setVisible(false);
+                    bFrame.setVisible(true);
+            }
         }
         class exitButtonListener implements ActionListener {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                        System.exit(0);
-                }
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                    System.exit(0);
+            }
         }
 }

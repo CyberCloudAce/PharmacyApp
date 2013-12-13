@@ -32,41 +32,45 @@ public class updatePhysicianMenu {
         JButton exitButton = new JButton("Exit Program");
         public JFrame bFrame = new JFrame();
 
-        public void startGui(JFrame aFrame){
-                bFrame = aFrame;
-                
-                
-                //Set up form and panels
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setSize(400,260);
-                frame.add(topPanel,BorderLayout.NORTH);
-                frame.add(MainPanel,BorderLayout.CENTER);
-                frame.add(bottomPanel,BorderLayout.SOUTH);
-                topPanel.setBorder(new EmptyBorder(10, 10, 0, 10));
-                MainPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-                bottomPanel.setBorder(new EmptyBorder(0, 10, 10, 10));
-                frame.setLocationRelativeTo(null);
-                
-                //Add items to panel. Grid layout means rows, columns, horizontal padding, vertical padding
-                topPanel.setLayout(new GridLayout(1,1,0,0));
+        public void startGui(JFrame aFrame, String fname, String lname, String address, String phone){
+            bFrame = aFrame;
+            
+            
+            //Set up form and panels
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(400,260);
+            frame.add(topPanel,BorderLayout.NORTH);
+            frame.add(MainPanel,BorderLayout.CENTER);
+            frame.add(bottomPanel,BorderLayout.SOUTH);
+            topPanel.setBorder(new EmptyBorder(10, 10, 0, 10));
+            MainPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+            bottomPanel.setBorder(new EmptyBorder(0, 10, 10, 10));
+            frame.setLocationRelativeTo(null);
+            
+            //Add items to panel. Grid layout means rows, columns, horizontal padding, vertical padding
+            topPanel.setLayout(new GridLayout(1,1,0,0));
             MainPanel.setLayout(new GridLayout(4,2,10,10));
             bottomPanel.setLayout(new GridLayout(1,2,10,10));
             topPanel.add(infoLabel1);
-                MainPanel.add(firstNameLabel);
-                MainPanel.add(firstNameText);
-                MainPanel.add(lastNameLabel);
-                MainPanel.add(lastNameText);
-                MainPanel.add(addressLabel);
-                MainPanel.add(addressText);
-                MainPanel.add(phoneLabel);
-                MainPanel.add(phoneText);
-                bottomPanel.add(submitButton);
-                bottomPanel.add(exitButton);
-                
-                submitButton.addActionListener(new submitButtonListener());
+            MainPanel.add(firstNameLabel);
+            MainPanel.add(firstNameText);
+            firstNameText.setText(fname);
+            MainPanel.add(lastNameLabel);
+            MainPanel.add(lastNameText);
+            lastNameText.setText(lname);
+            MainPanel.add(addressLabel);
+            MainPanel.add(addressText);
+            addressText.setText(address);
+            MainPanel.add(phoneLabel);
+            MainPanel.add(phoneText);
+            phoneText.setText(phone);
+            bottomPanel.add(submitButton);
+            bottomPanel.add(exitButton);
+            
+            submitButton.addActionListener(new submitButtonListener());
             exitButton.addActionListener(new exitButtonListener());
             
-                frame.setVisible(true);
+            frame.setVisible(true);
         }
         class submitButtonListener implements ActionListener {
                 @Override

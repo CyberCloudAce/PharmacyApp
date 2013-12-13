@@ -18,7 +18,7 @@ public class viewInsuranceMenu {
     JPanel bottomPanel = new JPanel();
 
     //initialize form contents
-    JLabel infoLabel1 = new JLabel("Current Insurance Policies:");
+    JLabel infoLabel1 = new JLabel("Current Insurance Policy:");
     JLabel infoProviderLabel = new JLabel("Provider Name:");
     JLabel infoPolicyLabel = new JLabel("Policy Name:");
     JLabel infoDescriptionLabel = new JLabel("Description:");

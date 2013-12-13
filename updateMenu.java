@@ -24,19 +24,19 @@ public class updateMenu {
         JFrame bFrame = new JFrame();
 
         public void startGUI(JFrame aFrame) {
-                bFrame = aFrame;
-                
-                //Set up form and panels
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setSize(400,200);
-                frame.add(topPanel,BorderLayout.NORTH);
-                frame.add(MainPanel,BorderLayout.CENTER);
-                topPanel.setBorder(new EmptyBorder(10, 10, 0, 10));
-                MainPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-                frame.setLocationRelativeTo(null);
-                
-                //Add items to panel. Grid layout means rows, columns, horizontal padding, vertical padding
-                topPanel.setLayout(new GridLayout(1,1,0,0));
+            bFrame = aFrame;
+            
+            //Set up form and panels
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(400,200);
+            frame.add(topPanel,BorderLayout.NORTH);
+            frame.add(MainPanel,BorderLayout.CENTER);
+            topPanel.setBorder(new EmptyBorder(10, 10, 0, 10));
+            MainPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+            frame.setLocationRelativeTo(null);
+            
+            //Add items to panel. Grid layout means rows, columns, horizontal padding, vertical padding
+            topPanel.setLayout(new GridLayout(1,1,0,0));
             MainPanel.setLayout(new GridLayout(3,2,10,10));
             topPanel.add(infoLabel1);
             MainPanel.add(patientButton);
@@ -58,33 +58,32 @@ public class updateMenu {
         class patientButtonListener implements ActionListener {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                        PharmacyApp.aController.updatePatientMenuStart(frame);
+                        PharmacyApp.aController.updateBoxMenuStart("patients",frame);
                 }
         }
         class physicianButtonListener implements ActionListener {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                        PharmacyApp.aController.updatePhysicianMenuStart(frame);
+                    PharmacyApp.aController.updateBoxMenuStart("physicians",frame);
                 }
         }
         class medicineButtonListener implements ActionListener {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                        PharmacyApp.aController.updateMedicineMenuStart(frame);
+                    PharmacyApp.aController.updateBoxMenuStart("medicines",frame);
 
                 }
         }
         class insuranceButtonListener implements ActionListener {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                        PharmacyApp.aController.updateInsuranceMenuStart(frame);
+                    PharmacyApp.aController.updateBoxMenuStart("insurances",frame);
                 }
         }
         class exitButtonListener implements ActionListener {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                         PharmacyApp.aController.shutdown();
-                        bFrame.setVisible(true);
                 }
                 
         }

@@ -35,7 +35,7 @@ public class updateMedicineMenu {
 	JButton exitButton = new JButton("Exit Program");
 	JFrame bFrame = new JFrame();
 	
-	public void startGui(JFrame aFrame){
+	public void startGui(JFrame aFrame, String name, String desc, String effects){
 		bFrame = aFrame;
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -58,10 +58,13 @@ public class updateMedicineMenu {
 	    topPanel.add(infoLabel1);
 		MainPanel.add(nameLabel);
 		MainPanel.add(nameText);
+		nameText.setText(name);
 		MainPanel.add(descriptionLabel);
 		MainPanel.add(descriptionText);
+		descriptionText.setText(desc);
 		MainPanel.add(sideEffectsLabel);
 		MainPanel.add(sideEffectsText);
+		sideEffectsText.setText(effects);
 		MainPanel.add(genericRadio);
 		MainPanel.add(nameBrandRadio);
 		bottomPanel.add(submitButton);
@@ -79,7 +82,7 @@ public class updateMedicineMenu {
 	class submitButtonListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-		Controller.updateMedicine(nameText.getText(), descriptionText.getText(), sideEffectsText.getText());
+		Controller.updateMedication(nameText.getText(), descriptionText.getText(), sideEffectsText.getText());
 		// radio button submit? JRadioButtonMenuItem()
       		frame.setVisible(false);
       		bFrame.setVisible(true);

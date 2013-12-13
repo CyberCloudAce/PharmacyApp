@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class ViewPerscriptionMenu {
+public class viewPerscriptionMenu {
 
 	//initialize form elements
     JFrame frame = new JFrame("Main Menu");
@@ -35,7 +35,8 @@ public class ViewPerscriptionMenu {
     JFrame bFrame = new JFrame();
     
     public void startGui(String medication, String refill, String startDate, String endDate, String physician, JFrame aFrame){
-	bFrame = aFrame;
+    	bFrame = aFrame;
+    	
     	//Set up form and panels
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400,220);
