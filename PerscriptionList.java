@@ -18,7 +18,6 @@ public class PerscriptionList {
 	}
 	
 	public void add(Prescription aPerscription){
-		aList.remove(aPerscription.getPrescriptionID());
 		aList.add(aPerscription);
 	}
 

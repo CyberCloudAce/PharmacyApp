@@ -73,7 +73,7 @@ public class addMedicineMenu {
 	class submitButtonListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			Controller.addMedication(nameText.getText(),descriptionText.getText(),)
+			Controller.addMedication(nameText.getText(),descriptionText.getText(),sideEffectsText.getText());
 		}
 	}
 	class exitButtonListener implements ActionListener {

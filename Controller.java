@@ -43,6 +43,16 @@ public class Controller {
 		viewMenu view2 = new viewMenu();
 		view2.startGUI(frame);
 	}
+	public void viewBoxMenuStart(JFrame frame, String type){
+		frame.setVisible(false);
+		viewBoxMenu view2 = new viewBoxMenu();
+		view2.startGUI(frame);
+	}
+	public void updateBoxMenuStart(JFrame frame, String type){
+		frame.setVisible(false);
+		updateBoxMenu view2 = new updateBoxMenu();
+		view2.startGUI(frame);
+	}
 	public void addPatientMenuStart(JFrame frame){
 		frame.setVisible(false);
 		addPatientMenu view2 = new addPatientMenu();
@@ -75,7 +85,7 @@ public class Controller {
 	}
 	public void viewPerscriptionMenuStart(JFrame frame){
 		frame.setVisible(false);
-		ViewPerscriptionMenu view2 = new ViewPerscriptionMenu();
+		viewPerscriptionMenu view2 = new viewPerscriptionMenu();
 		view2.startGui(frame);
 	}
 	public void viewInsuranceMenuStart(JFrame frame){

@@ -42,4 +42,9 @@ public class PhysicianList {
 		}
 		return aString;
 	}
+
+	public void add(Physician aPhysician) {
+		aList.add(aPhysician);
+		
+	}
 }

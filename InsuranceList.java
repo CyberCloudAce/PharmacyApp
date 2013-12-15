@@ -45,4 +45,8 @@ public class InsuranceList{
 		}
 		return aString;
 	}
+
+	public void add(Insurance aInsurance) {
+		aList.add(aInsurance);
+	}
 }

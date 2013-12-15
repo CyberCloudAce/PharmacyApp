@@ -42,4 +42,9 @@ public class MedicationList {
 		}
 		return aString;
 	}
+
+	public void add(Medication aMedication) {
+		//aList.remove(aMedication.getID());
+		aList.add(aMedication);
+	}
 }

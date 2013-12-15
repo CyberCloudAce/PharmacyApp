@@ -45,7 +45,7 @@ public class PatientList {
 	}
 
 	public void add(Patient aPatient) {
-		aList.remove(aPatient.getID());
+		//aList.remove(aPatient.getID());
 		aList.add(aPatient);
 		
 	}
