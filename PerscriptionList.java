@@ -4,7 +4,7 @@ import java.util.List;
 //coded 12/5 by jeff andolora
 public class PerscriptionList {
 
-	private List<Prescription> aList = new ArrayList<Prescription>();
+	public List<Prescription> aList = new ArrayList<Prescription>();
 
 	// Methods
 	

@@ -7,7 +7,7 @@ import java.util.*;
 
 public class InsuranceList{
 
-	private List<Insurance> aList = new ArrayList<Insurance>();
+	public List<Insurance> aList = new ArrayList<Insurance>();
 
 	// Methods
 

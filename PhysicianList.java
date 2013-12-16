@@ -4,7 +4,7 @@ import java.util.List;
 //coded by jeff andolora 12/5
 public class PhysicianList {
 
-	private List<Physician> aList = new ArrayList<Physician>();
+	public List<Physician> aList = new ArrayList<Physician>();
 
 	// Methods
 
