@@ -33,12 +33,12 @@ public class Controller {
 		addMenu view2 = new addMenu();
 		view2.startGUI(frame);
 	}
-	public static void updateMenuStart(JFrame frame, String type){
+	public void updateMenuStart(JFrame frame){
 		frame.setVisible(false);
 		updateMenu view2 = new updateMenu();
 		view2.startGUI(frame);
 	}
-	public void viewMenuStart(JFrame frame, String type){
+	public void viewMenuStart(JFrame frame){
 		frame.setVisible(false);
 		viewMenu view2 = new viewMenu();
 		view2.startGUI(frame);

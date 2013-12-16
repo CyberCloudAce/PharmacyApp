@@ -375,20 +375,92 @@ public class DataAccessClass {
 	}
 		
 	public void updatePerscription(String medication, String refill, String dateI, String dateE, String physician){
-		
+		try { //Must use try catch with DB connection - Mongo class throws UnknownHostException
+			Mongo aMongo = new Mongo("136.224.250.156");
+			DB db = aMongo.getDB("database");
+			DBCollection coll = db.getCollection("perscriptions"); //mongoDB collections are like tables in any RDBMS
+			
+			//delete old record, before adding in the updated one
+			BasicDBObject recordToDelete = new BasicDBObject("name",aName);
+			coll.remove(recordToDelete);
+			
+			//create and add new record
+			BasicDBObject recordToAdd = new BasicDBObject("name",name).
+			        append("phone",aPhone). //this creates the JSON to insert
+			        append("dob",aDOB).		//append function adds a new element to the JSON
+			        append("insurance", aInsurance);
+			coll.insert(recordToAdd); //inserts the record into the patients collection. this is the line of code that actually establishes the connection
+			aMongo.close(); //closes the mongoDB connection
+		} catch (UnknownHostException e) {
+			//you should probably try to start the server if this code runs
+			System.out.println("have you tried turning it on and off again?");
+		}
 		
 	}
 	public void updateMedication(String name, String cost, String effects){
-		
+		try { //Must use try catch with DB connection - Mongo class throws UnknownHostException
+			Mongo aMongo = new Mongo("136.224.250.156");
+			DB db = aMongo.getDB("database");
+			DBCollection coll = db.getCollection("patients"); //mongoDB collections are like tables in any RDBMS
+			
+			//delete old record, before adding in the updated one
+			BasicDBObject recordToDelete = new BasicDBObject("name",name);
+			coll.remove(recordToDelete);
+			
+			//create and add new record
+			BasicDBObject recordToAdd = new BasicDBObject("name",name).
+			        append("cost",cost). //this creates the JSON to insert
+			        append("sideeffects", effects);
+			coll.insert(recordToAdd); //inserts the record into the patients collection. this is the line of code that actually establishes the connection
+			aMongo.close(); //closes the mongoDB connection
+		} catch (UnknownHostException e) {
+			//you should probably try to start the server if this code runs
+			System.out.println("have you tried turning it on and off again?");
+		}
 		
 	}
 	public void updateInsurance(String company, String policy, String phone){
-		
+		try { //Must use try catch with DB connection - Mongo class throws UnknownHostException
+			Mongo aMongo = new Mongo("136.224.250.156");
+			DB db = aMongo.getDB("database");
+			DBCollection coll = db.getCollection("patients"); //mongoDB collections are like tables in any RDBMS
+			
+			//delete old record, before adding in the updated one
+			BasicDBObject recordToDelete = new BasicDBObject("company", company);
+			coll.remove(recordToDelete);
+			
+			//create and add new record
+			BasicDBObject recordToAdd = new BasicDBObject("company", company).
+			        append("policy", policy).
+			        append("phone",phone);
+			coll.insert(recordToAdd); //inserts the record into the patients collection. this is the line of code that actually establishes the connection
+			aMongo.close(); //closes the mongoDB connection
+		} catch (UnknownHostException e) {
+			//you should probably try to start the server if this code runs
+			System.out.println("have you tried turning it on and off again?");
+		}
 		
 	}
 	public void updatePhysician(String firstName, String lastName, String address, String phone){
-		
-		
+		try { //Must use try catch with DB connection - Mongo class throws UnknownHostException
+			Mongo aMongo = new Mongo("136.224.250.156");
+			DB db = aMongo.getDB("database");
+			DBCollection coll = db.getCollection("patients"); //mongoDB collections are like tables in any RDBMS
+			
+			//delete old record, before adding in the updated one
+			BasicDBObject recordToDelete = new BasicDBObject("firstname", firstName);
+			coll.remove(recordToDelete);
+			
+			//create and add new record
+			BasicDBObject recordToAdd = new BasicDBObject("firstname", firstName).
+			        append("lastname",lastName). //this creates the JSON to insert
+			        append("address",address).	//append function adds a new element to the JSON
+			        append("phone",phone);
+			coll.insert(recordToAdd); //inserts the record into the patients collection. this is the line of code that actually establishes the connection
+			aMongo.close(); //closes the mongoDB connection
+		} catch (UnknownHostException e) {
+			//you should probably try to start the server if this code runs
+			System.out.println("have you tried turning it on and off again?");
+		}
 	}
-	
 }

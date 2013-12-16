@@ -74,6 +74,9 @@ public class addMedicineMenu {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			Controller.addMedication(nameText.getText(),descriptionText.getText(),sideEffectsText.getText());
+			frame.setVisible(false);
+			bFrame.setVisible(true);
+			
 		}
 	}
 	class exitButtonListener implements ActionListener {

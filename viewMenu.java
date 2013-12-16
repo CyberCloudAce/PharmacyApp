@@ -59,13 +59,13 @@ public class viewMenu {
         class patientButtonListener implements ActionListener {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                	PharmacyApp.aController.viewBoxMenuStart(frame, "patients");
+                	PharmacyApp.aController.viewBoxMenuStart(frame, "patient");
                 }
         }
         class physicianButtonListener implements ActionListener {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    PharmacyApp.aController.viewBoxMenuStart(frame, "physician);
+                    PharmacyApp.aController.viewBoxMenuStart(frame, "physician");
                 }
         }
         class medicineButtonListener implements ActionListener {

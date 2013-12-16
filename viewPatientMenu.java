@@ -73,6 +73,7 @@ public class viewPatientMenu {
     class returnButtonListener implements ActionListener {
         @Override
 		public void actionPerformed(ActionEvent e) {
+        		PharmacyApp.aController.viewBoxMenuStart(frame, "perscription");
                 frame.setVisible(false);
                 bFrame.setVisible(true);
         }
