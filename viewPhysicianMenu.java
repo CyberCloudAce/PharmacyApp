@@ -28,7 +28,8 @@ public class viewPhysicianMenu {
     JButton returnButton = new JButton("Return");
     JButton exitButton = new JButton("Exit Program");
     JFrame bFrame = new JFrame();	
-    public void startGui(String firstName, String lastName, String phoneNum, JFrame aFrame){
+    
+    public void startGui(JFrame aFrame, Physician aPhysician){
 	bFrame = aFrame;
     	//Set up form and panels
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -41,9 +42,9 @@ public class viewPhysicianMenu {
         bottomPanel.setBorder(new EmptyBorder(0, 10, 10, 10));
 
         frame.setLocationRelativeTo(null);
-        firstNameLabel.setText(firstName);
-        lastNameLabel.setText(lastName);
-        phoneLabel.setText(phoneNum);
+        firstNameLabel.setText(aPhysician.getFirstName());
+        lastNameLabel.setText(aPhysician.getLastName());
+        phoneLabel.setText(aPhysician.getPhone());
                 
         //Add items to panel. Grid layout means rows, columns, horizontal padding, vertical padding
         topPanel.setLayout(new GridLayout(1,1,0,0));

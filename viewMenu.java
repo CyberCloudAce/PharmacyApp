@@ -71,7 +71,7 @@ public class viewMenu {
         class medicineButtonListener implements ActionListener {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    PharmacyApp.aController.viewBoxMenuStart(frame, "medicine");
+                    PharmacyApp.aController.viewBoxMenuStart(frame, "medication");
                 }
         }
         class insuranceButtonListener implements ActionListener {

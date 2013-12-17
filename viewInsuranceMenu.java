@@ -29,7 +29,7 @@ public class viewInsuranceMenu {
     JButton exitButton = new JButton("Exit Program");
     JFrame bFrame = new JFrame();
 
-    public void startGui(String provider, String policy, String description, JFrame aFrame){
+    public void startGui(JFrame aFrame, Insurance aPolicy){
     	bFrame = aFrame;
 
     	//Set up form and panels
@@ -43,9 +43,9 @@ public class viewInsuranceMenu {
         bottomPanel.setBorder(new EmptyBorder(0, 10, 10, 10));
 
         frame.setLocationRelativeTo(null);
-        providerLabel.setText(provider);
-        policyLabel.setText(policy);
-        descriptionLabel.setText(description);
+        providerLabel.setText(aPolicy.getCompanyName());
+        policyLabel.setText(aPolicy.getPolicyName());
+        descriptionLabel.setText(aPolicy.getProviderPhoneNum());
                 
         //Add items to panel. Grid layout means rows, columns, horizontal padding, vertical padding
         topPanel.setLayout(new GridLayout(1,1,0,0));

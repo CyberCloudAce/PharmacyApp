@@ -74,7 +74,10 @@ public class Patient {
 		aString += "Phone Number: " + this.phoneNum + "\n";
 		aString += "Date of Birth: " + this.dob + "\n";
 		aString += "Insurance Provider: " + this.insuranceProvider + "\n";
-		aString += "Perscription History: " + this.perscriptionHist.toString() + "\n";
+		if(this.perscriptionHist != null){
+			aString += "Perscription History: " + this.perscriptionHist.toString() + "\n";	
+		}
+		
 		return aString;
 	}
 

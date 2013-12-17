@@ -25,6 +25,10 @@ public class viewBoxMenu {
 	String aPatientName; //for Perscription Tracking
 	DefaultListModel model = new DefaultListModel();
 	
+	public void startGUI(JFrame aFrame){
+		startGUI(aFrame, null);
+	}
+	
 	public void startGUI(JFrame aFrame, String type){
 		bFrame = aFrame;
 		aType = type;
@@ -32,8 +36,8 @@ public class viewBoxMenu {
 		//Set up form and panels
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400,200);
-        frame.add(topPanel,BorderLayout.NORTH);
-        frame.add(MainPanel,BorderLayout.CENTER);
+        frame.add(topPanel,BorderLayout.CENTER);
+        frame.add(MainPanel,BorderLayout.SOUTH);
         topPanel.setBorder(new EmptyBorder(10, 10, 0, 10));
         MainPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
         frame.setLocationRelativeTo(null);
@@ -42,8 +46,7 @@ public class viewBoxMenu {
         topPanel.setLayout(new GridLayout(2,1,0,0));
         MainPanel.setLayout(new GridLayout(1,2,10,10));
         topPanel.add(infoLabel1);
-        topPanel.add(infoLabel1);
-        MainPanel.add(submitButton);
+        topPanel.add(list);
         MainPanel.add(submitButton);
         MainPanel.add(exitButton);
         
@@ -104,23 +107,69 @@ public class viewBoxMenu {
         	public void actionPerformed(ActionEvent e) {
         		switch(aType){
 	        		case "patient":
-	        			PharmacyApp.aController.viewPatientMenuStart();
+	        			String selectedToString = (String) list.getSelectedValue();
+	        			PatientList aPatiList = new PatientList();
+	    				aPatiList = PharmacyApp.aController.getAllPatients();
+	    				Patient selectedPatient = new Patient();
+	    				for(Patient aPatient:aPatiList.aList){
+	    					if(selectedToString == aPatient.toString()){
+	    						selectedPatient = aPatient;
+	    					}
+	    				}
+	        			PharmacyApp.aController.viewPatientMenuStart(frame, selectedPatient);
 	        			break;
 	        		case "perscription":
-	        			PharmacyApp.aController.viewPerscriptionMenuStart();
+	        			String selectedToString1 = (String) list.getSelectedValue();
+	    				PerscriptionList aPersList = new PerscriptionList();
+	    				aPersList = PharmacyApp.aController.getAllPerscriptions(aType);
+	    				Prescription selectedPerscription = new Prescription();
+	    				for(Prescription aPerscription:aPersList.aList){
+	    					if(selectedToString1 == aPerscription.toString()){
+	    						selectedPerscription = aPerscription;
+	    					}
+	    				}
+	        			PharmacyApp.aController.viewPerscriptionMenuStart(frame, selectedPerscription);
 	        			break;
 	        		case "medication":
-	        			PharmacyApp.aController.viewMedicationMenuStart();
+	        			String selectedToString2 = (String) list.getSelectedValue();
+	    				MedicationList aMediList = new MedicationList();
+	    				Medication selectedMedication = new Medication();
+	    				aMediList = PharmacyApp.aController.getAllMedications();
+	    				for(Medication aMed:aMediList.aList){
+	    					if(selectedToString2 == aMed.toString()){
+	    						selectedMedication = aMed;
+	    					}
+	    				}
+	        			PharmacyApp.aController.viewMedicineMenuStart(frame, selectedMedication);
 	        			break;
 	        		case "insurance":
-	        			PharmacyApp.aController.viewInsuranceMenuStart();
+	        			String selectedToString3 = (String) list.getSelectedValue();
+	    				InsuranceList aInsuList = new InsuranceList();
+	    				aInsuList = PharmacyApp.aController.getAllInsurances();
+	    				Insurance selectedInsurance = new Insurance();
+	    				for(Insurance aInsurance:aInsuList.aList){
+	    					if(selectedToString3 == aInsurance.toString()){
+	    						selectedInsurance = aInsurance;
+	    					}
+	    				}
+	        			PharmacyApp.aController.viewInsuranceMenuStart(frame, selectedInsurance);
 	        			break;
 	        		case "physician":
-	        			PharmacyApp.aController.viewPhysicianMenuStart();
+	        			String selectedToString4 = (String) list.getSelectedValue();
+	    				PhysicianList aPhysList = new PhysicianList();
+	    				aPhysList = PharmacyApp.aController.getAllPhysicians();
+	    				Physician selectedPhysician = new Physician();
+	    				for(Physician aPhys:aPhysList.aList){
+	    					if(selectedToString4 == aPhys.toString()){
+	    						selectedPhysician = aPhys;
+	    					}
+	    				}
+	        			PharmacyApp.aController.viewPhysicianMenuStart(frame, selectedPhysician);
 	        			break;
 	        		default: 
 	        			//this should never run
-	        			System.out.println("ViewBoxMenu type error");
+	        			String selectedToString5 = (String) list.getSelectedValue();
+	        			System.out.println("ViewBoxMenu type error, selectedIndex=" + selectedToString5);
         		}
         		hideWindows();
         	}

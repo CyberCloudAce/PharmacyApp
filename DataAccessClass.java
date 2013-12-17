@@ -248,7 +248,10 @@ public class DataAccessClass {
 			PatientList aList = new PatientList();
 			while(cursor.hasNext()){ //loop through all results
 				Patient aPatient = new Patient();
-				aPatient.setName(cursor.next().get("firstname").toString());
+				aPatient.setName((String) cursor.next().get("name"));
+				aPatient.setPhoneNum((String) cursor.next().get("phone"));
+				aPatient.setDOB((String) cursor.next().get("dob"));
+				aPatient.setInsuranceProvider((String) cursor.next().get("insurance"));
 				aList.add(aPatient);
 			}
 			cursor.close();
@@ -313,6 +316,8 @@ public class DataAccessClass {
 			while(cursor.hasNext()){ //loop through all results
 				Physician aPhysician = new Physician();
 				aPhysician.setFirstName(cursor.next().get("firstname").toString());
+				System.out.println(cursor.next().get("firstname").toString());
+				System.out.println(cursor.next().get("firstname"));
 				aPhysician.setLastName(cursor.next().get("lastname").toString());
 				aPhysician.setAddress(cursor.next().get("address").toString());
 				aPhysician.setPhone(cursor.next().get("phone").toString());

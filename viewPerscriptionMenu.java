@@ -34,7 +34,7 @@ public class viewPerscriptionMenu {
     JButton exitButton = new JButton("Exit Program");
     JFrame bFrame = new JFrame();
     
-    public void startGui(String medication, String refill, String startDate, String endDate, String physician, JFrame aFrame){
+    public void startGui(JFrame aFrame, Prescription aPerscription){
     	bFrame = aFrame;
     	
     	//Set up form and panels
@@ -48,12 +48,12 @@ public class viewPerscriptionMenu {
         bottomPanel.setBorder(new EmptyBorder(0, 10, 10, 10));
 
         frame.setLocationRelativeTo(null);
-        medicineLabel.setText(medication);
-        refillLabel.setText(refill);
-        stDateLabel.setText(startDate);
-        endDateLabel.setText(endDate);
-        physicianLabel.setText(physician);
-                
+        medicineLabel.setText(aPerscription.getMedication());
+        refillLabel.setText(String.valueOf(aPerscription.getRefill()));
+        stDateLabel.setText(aPerscription.getDateIssued());
+        endDateLabel.setText(aPerscription.getDateExpired());
+        physicianLabel.setText(String.valueOf(aPerscription.getPhysicianID()));
+               
         //Add items to panel. Grid layout means rows, columns, horizontal padding, vertical padding
         topPanel.setLayout(new GridLayout(1,1,0,0));
         mainPanel.setLayout(new GridLayout(3,2,10,10));

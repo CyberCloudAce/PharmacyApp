@@ -18,8 +18,8 @@ public class viewMedicationMenu {
     JPanel bottomPanel = new JPanel();
 
     //initialize form contents
-    JLabel infoLabel1 = new JLabel("Current Patient Medication:");
-    JLabel infoPatientNameLabel = new JLabel("Patient Name:");
+    JLabel infoLabel1 = new JLabel("Current Medication:");
+    JLabel infoPatientNameLabel = new JLabel("Medication Name:");
     JLabel infoMedicationCostLabel = new JLabel("Medication Cost:");
     JLabel infoSideEffectsLabel = new JLabel("Side Effects:");
     JLabel patientNameLabel = new JLabel("");
@@ -29,7 +29,7 @@ public class viewMedicationMenu {
     JButton exitButton = new JButton("Exit Program");
     JFrame bFrame = new JFrame();
     
-    public void startGui(String name, String cost, String effects, JFrame aFrame){
+    public void startGui(JFrame aFrame, Medication aMedication){
 		bFrame = aFrame;
     	//Set up form and panels
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -42,9 +42,9 @@ public class viewMedicationMenu {
         bottomPanel.setBorder(new EmptyBorder(0, 10, 10, 10));
 
         frame.setLocationRelativeTo(null);
-        patientNameLabel.setText(name);
-        medicationCostLabel.setText(cost);
-        sideEffectsLabel.setText(effects);
+        patientNameLabel.setText(aMedication.getName());
+        medicationCostLabel.setText(String.valueOf(aMedication.getCost()));
+        sideEffectsLabel.setText(aMedication.getSideEffects());
                 
         //Add items to panel. Grid layout means rows, columns, horizontal padding, vertical padding
         topPanel.setLayout(new GridLayout(1,1,0,0));
